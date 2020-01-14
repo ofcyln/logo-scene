@@ -18,7 +18,148 @@
 	<section class="d-flex flex-row flex-fill">
 		<article class="d-flex flex-fill"></article>
 
-		<article class="d-flex"></article>
+		<article class="d-flex flex-column border-left">
+			<div class="p-3 d-flex flex-column">
+				<p>Choose background color</p>
+
+				<div>
+					<input type="color"
+					       id="head"
+					       name="head"
+					       value="#e66465">
+
+					<label for="head">Pick</label>
+				</div>
+			</div>
+
+			<div class="border-top"></div>
+
+			<div class="p-3 d-flex flex-column">
+				<p>Choose logo position</p>
+
+				<div>
+					<input type="range"
+					       id="updDown"
+					       name="up-down"
+					       min="0"
+					       max="100"
+					       value="50"
+					       step="1">
+
+					<label for="updDown">Up-Down</label>
+				</div>
+			</div>
+
+			<div class="p-3 d-flex flex-column">
+				<div>
+					<input type="range"
+					       id="leftRight"
+					       name="left-right"
+					       min="0"
+					       max="100"
+					       value="50"
+					       step="1">
+
+					<label for="leftRight">Left-Right</label>
+				</div>
+			</div>
+
+			<div class="border-top"></div>
+
+			<div class="p-3 d-flex flex-column">
+				<p>Enter brand name</p>
+
+				<div>
+					<input type="text"
+					       id="brandName"
+					       name="up-down">
+				</div>
+			</div>
+
+			<div class="p-3 d-flex flex-column">
+				<label for="pet-select">Choose font type</label>
+
+				<select name="pets" id="pet-select">
+					<option value="" disabled selected>--Please choose a font--</option>
+					<option value="Humanoidstraight">Humanoidstraight</option>
+					<option value="BloxBRK">BloxBRK</option>
+					<option value="PixelSix01">PixelSix01</option>
+					<option value="Pixel">Pixel</option>
+					<option value="Arcade">Arcade</option>
+					<option value="Humanoid">Humanoid</option>
+					<option value="KongtextRegular">KongtextRegular</option>
+					<option value="MobileFont">MobileFont</option>
+					<option value="LotsOfDotz">PixelCowboy</option>
+					<option value="PixelCowboy">Arcade</option>
+					<option value="OrangeKid-Regular">OrangeKid-Regular</option>
+				</select>
+			</div>
+
+			<div class="p-3 d-flex flex-column">
+				<p>Choose font size</p>
+
+				<div>
+					<input type="range"
+					       id="fontSize"
+					       name="up-down"
+					       min="0"
+					       max="150"
+					       value="50"
+					       step="1">
+
+					<label for="fontSize">Font size</label>
+				</div>
+			</div>
+
+			<div class="p-3 d-flex flex-column">
+				<p>Choose font position</p>
+
+				<div>
+					<input type="range"
+					       id="updDownFont"
+					       name="up-down"
+					       min="0"
+					       max="100"
+					       value="50"
+					       step="1">
+
+					<label for="updDownFont">Up-Down</label>
+				</div>
+			</div>
+
+			<div class="p-3 d-flex flex-column">
+				<div>
+					<input type="range"
+					       id="leftRightFont"
+					       name="left-right"
+					       min="0"
+					       max="100"
+					       value="50"
+					       step="1">
+
+					<label for="leftRightFont">Left-Right</label>
+				</div>
+			</div>
+
+			<div class="border-top"></div>
+
+			<div class="p-3 d-flex flex-column">
+				<p>Scale logo</p>
+
+				<div>
+					<input type="range"
+					       id="scaleLogo"
+					       name="up-down"
+					       min="0"
+					       max="3"
+					       value="1"
+					       step="1">
+
+					<label for="scaleLogo">100%-300%</label>
+				</div>
+			</div>
+
+		</article>
 	</section>
 </body>
 	<script src="assets/js/main.js"></script>
