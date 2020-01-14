@@ -1,0 +1,12 @@
+@font-face {
+	font-family: 'example';
+	src: url('../font/example/example.eot?10000');
+	src:
+		url('../font/example/example.eot?#iefix') format('embedded-opentype'),
+		url('../font/example/example.woff2') format('woff2'),
+		url('../font/example/example.woff') format('woff'),
+		url('../font/example/example.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
