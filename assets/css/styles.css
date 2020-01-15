@@ -1,0 +1,12 @@
+.logo-scene-container {
+    height: 60%;
+    width: 60%;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.p-absolute {
+    position: relative;
+}
