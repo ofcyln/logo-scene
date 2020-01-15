@@ -25,12 +25,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const [sceneWidthForLogo, sceneHeightForLogo] = calculateOneToHundredStepOfScene(pageElements.sceneLogo);
     const [sceneWidthForBrand, sceneHeightForBrand] = calculateOneToHundredStepOfScene(pageElements.sceneBrandName);
 
-    // const eventListenerForInputChanges = (element, listenerType, callbackFuncion) => element.addEventListener(listenerType, callbackFuncion);
+    const eventListenerForInputChanges = (element, listenerType, callbackFuncion) => element.addEventListener(listenerType, callbackFuncion);
 
     // Object.keys(pageElements)
     // .filter(element => element.includes('Input'))
     // .forEach(inputElement => {
-    //     
+    //     if (inputElement === 'backgroundColorInput' || inputElement === 'fontTypeInput') {
+    //         if (inputElement === 'backgroundColorInput') {
+    //             eventListenerForInputChanges(
+    //                 pageElements[inputElement], 
+    //                 'change', 
+    //                 pageElements.sceneBackground.style.backgroundColor = `${pageElements.backgroundColorInput.value}`
+    //             );
+    //         } else {
+                
+    //         }
+            
+    //     }
     // });
 
     pageElements.backgroundColorInput
