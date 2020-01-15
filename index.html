@@ -16,7 +16,7 @@
 
 <body class="d-flex flex-column vh-100">
 	<section class="d-flex flex-row flex-fill">
-		<article class="d-flex flex-fill align-items-top justify-content-center pt-3">
+		<article class="d-flex flex-fill align-items-top justify-content-center pt-5">
 			<div class="logo-scene-container d-flex flex-column p-relative">
 				<div class="background-area d-flex flex-fill"></div>
 
@@ -30,15 +30,13 @@
 
 		<article class="d-flex flex-column border-left">
 			<div class="p-3 d-flex flex-column">
-				<p>Choose background color</p>
-
 				<div>
 					<input type="color"
 					       id="backgroundColor"
 					       name="background-color"
 					       value="#e66465">
 
-					<label for="backgroundColor">Pick</label>
+					<label for="backgroundColor">Choose background color</label>
 				</div>
 			</div>
 
@@ -87,11 +85,22 @@
 				</div>
 			</div>
 
-			<div class="p-3 d-flex flex-column">
-				<label for="pet-select">Choose font type</label>
+			<div class="border-top"></div>
 
-				<select name="pets" id="fontTypeSelect">
-					<option value="" disabled selected>--Please choose a font--</option>
+			<div class="p-3 d-flex flex-column">
+				<div>
+					<input type="color"
+					       id="fontColor"
+					       name="background-color"
+					       value="#fff">
+
+					<label for="fontColor">Choose font color</label>
+				</div>
+			</div>
+
+			<div class="p-3 d-flex flex-column">
+				<select name="font-type" id="fontTypeSelect">
+					<option value="" disabled selected>--Choose a font--</option>
 					<option value="Humanoidstraight">Humanoidstraight</option>
 					<option value="BloxBRK">BloxBRK</option>
 					<option value="PixelSix01">PixelSix01</option>
