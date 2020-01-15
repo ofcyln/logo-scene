@@ -4,7 +4,14 @@
 }
 
 .logo-area img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 50%;
+}
+
+.background-area {
+    background-color: rgb(94, 172, 236);
 }
 
 .p-relative {
