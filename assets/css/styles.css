@@ -3,10 +3,14 @@
     width: 60%;
 }
 
+.logo-area img {
+    width: 50%;
+}
+
 .p-relative {
     position: relative;
 }
 
 .p-absolute {
-    position: relative;
+    position: absolute;
 }
