@@ -1,108 +1,109 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const elementSelector = (selector) => document.querySelector(selector);
+
     const pageElements = {
-        scene: () => document.querySelector('.logo-scene-container'),
-        sceneBackground: () => document.querySelector('.background-area'),
-        sceneLogo: () => document.querySelector('.logo-area img'),
-        sceneBrandName: () => document.querySelector('.brand-name-area'),
-        backgroundColorInput: () => document.querySelector('#backgroundColor'),
-        upDownLogoPositionInput: () => document.querySelector('#updDown'),
-        leftRightLogoPositionInput: () => document.querySelector('#leftRight'),
-        brandNameInput: () => document.querySelector('#brandName'),
-        fontTypeInput: () => document.querySelector('#fontTypeSelect'),
-        fontSizeInput: () => document.querySelector('#fontSize'),
-        upDownFontPositionInput: () => document.querySelector('#updDownFont'),
-        leftRightFontPositionInput: () => document.querySelector('#leftRightFont'),
-        scaleLogoInput: () => document.querySelector('#scaleLogo'),
+        scene: elementSelector('.logo-scene-container'),
+        sceneBackground: elementSelector('.background-area'),
+        sceneLogo: elementSelector('.logo-area img'),
+        sceneBrandName: elementSelector('.brand-name-area'),
+        backgroundColorInput: elementSelector('#backgroundColor'),
+        upDownLogoPositionInput: elementSelector('#updDown'),
+        leftRightLogoPositionInput: elementSelector('#leftRight'),
+        brandNameInput: elementSelector('#brandName'),
+        fontTypeInput: elementSelector('#fontTypeSelect'),
+        fontSizeInput: elementSelector('#fontSize'),
+        upDownFontPositionInput: elementSelector('#updDownFont'),
+        leftRightFontPositionInput: elementSelector('#leftRightFont'),
+        scaleLogoInput: elementSelector('#scaleLogo'),
     };
 
     const calculateOneToHundredStepOfScene = (element) => ([
-            (pageElements.scene().getBoundingClientRect().width - element.offsetWidth) / 100, 
-            (pageElements.scene().getBoundingClientRect().height - element.offsetHeight) / 100,
+            (pageElements.scene.getBoundingClientRect().width - element.offsetWidth) / 100, 
+            (pageElements.scene.getBoundingClientRect().height - element.offsetHeight) / 100,
         ]);
     
-    const [sceneWidthForLogo, sceneHeightForLogo] = calculateOneToHundredStepOfScene(pageElements.sceneLogo());
-    const [sceneWidthForBrand, sceneHeightForBrand] = calculateOneToHundredStepOfScene(pageElements.sceneBrandName());
+    const [sceneWidthForLogo, sceneHeightForLogo] = calculateOneToHundredStepOfScene(pageElements.sceneLogo);
+    const [sceneWidthForBrand, sceneHeightForBrand] = calculateOneToHundredStepOfScene(pageElements.sceneBrandName);
 
-    // const eventListenerForInputChanges = (element, func) => element.addEventListener('input', func);
+    // const eventListenerForInputChanges = (element, listenerType, callbackFuncion) => element.addEventListener(listenerType, callbackFuncion);
 
     // Object.keys(pageElements)
     // .filter(element => element.includes('Input'))
     // .forEach(inputElement => {
-    //     eventListenerForInputChanges(
-    //         pageElements[inputElement], 
-    //         () => console.log(pageElements[inputElement].value
-    //             ));
+    //     
     // });
 
-    pageElements.backgroundColorInput()
+    pageElements.backgroundColorInput
     .addEventListener(
         'change', 
         () => {
-            pageElements.sceneBackground().style.backgroundColor = `${pageElements.backgroundColorInput().value}`;
+            pageElements.sceneBackground.style.backgroundColor = `${pageElements.backgroundColorInput.value}`;
         },
     );
 
-    pageElements.upDownLogoPositionInput()
+    pageElements.upDownLogoPositionInput
     .addEventListener(
         'input', 
         () => {
-            pageElements.sceneLogo().style.top = `${sceneHeightForLogo * pageElements.upDownLogoPositionInput().value}px`;
+            pageElements.sceneLogo.style.top = `${sceneHeightForLogo * pageElements.upDownLogoPositionInput.value}px`;
         },
     );
 
-    pageElements.leftRightLogoPositionInput()
+    pageElements.leftRightLogoPositionInput
     .addEventListener(
         'input', 
         () => {
-            pageElements.sceneLogo().style.left = `${sceneWidthForLogo * pageElements.leftRightLogoPositionInput().value}px`;
+            pageElements.sceneLogo.style.left = `${sceneWidthForLogo * pageElements.leftRightLogoPositionInput.value}px`;
         },
     );
 
-    pageElements.brandNameInput()
+    pageElements.brandNameInput
     .addEventListener(
         'input', 
         () => {
-            pageElements.sceneBrandName().innerHTML = `${pageElements.brandNameInput().value}`;
+            pageElements.sceneBrandName.innerHTML = `${pageElements.brandNameInput.value}`;
         },
     );
 
-    pageElements.fontTypeInput()
+    pageElements.fontTypeInput
     .addEventListener(
         'change', 
         () => {
-            pageElements.sceneBrandName().style.fontFamily = pageElements.fontTypeInput().value;
+            pageElements.sceneBrandName.style.fontFamily = pageElements.fontTypeInput.value;
         },
     );
 
-    pageElements.upDownFontPositionInput()
+    pageElements.upDownFontPositionInput
     .addEventListener(
         'input', 
         () => {
-            pageElements.sceneBrandName().style.bottom = `${sceneHeightForBrand * pageElements.upDownFontPositionInput().value}px`;
+            pageElements.sceneBrandName.style.bottom = `${sceneHeightForBrand * pageElements.upDownFontPositionInput.value}px`;
         },
     );
 
-    pageElements.leftRightFontPositionInput()
+    pageElements.leftRightFontPositionInput
     .addEventListener(
         'input', 
         () => {
-            pageElements.sceneBrandName().style.right = `${sceneWidthForBrand * pageElements.leftRightFontPositionInput().value}px`;
+            pageElements.sceneBrandName.style.right = `${sceneWidthForBrand * pageElements.leftRightFontPositionInput.value}px`;
         },
     );
 
-    pageElements.fontSizeInput()
+    pageElements.fontSizeInput
     .addEventListener(
         'input', 
         () => {
-            pageElements.sceneBrandName().style.fontSize = `${pageElements.fontSizeInput().value}px`;
+            pageElements.sceneBrandName.style.fontSize = `${pageElements.fontSizeInput.value}px`;
         },
     );
 
-    pageElements.scaleLogoInput()
+    pageElements.scaleLogoInput
     .addEventListener(
         'input', 
         () => {
-            pageElements.scene().style.transform = `scale(${pageElements.scaleLogoInput().value})`;
+            pageElements.scene.style.transform = `scale(${pageElements.scaleLogoInput.value})`;
         },
     );
+
+
 });
