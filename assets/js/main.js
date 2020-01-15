@@ -104,6 +104,4 @@ document.addEventListener('DOMContentLoaded', () => {
             pageElements.scene.style.transform = `scale(${pageElements.scaleLogoInput.value})`;
         },
     );
-
-
 });
