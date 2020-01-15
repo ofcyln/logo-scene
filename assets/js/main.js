@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageElements = {
         scene: () => document.querySelector('.logo-scene-container'),
         sceneBackground: () => document.querySelector('.background-area'),
-        sceneLogo: () => document.querySelector('.logo-area'),
+        sceneLogo: () => document.querySelector('.logo-area img'),
         sceneBrandName: () => document.querySelector('.brand-name-area'),
         backgroundColorInput: () => document.querySelector('#backgroundColor'),
         upDownLogoPositionInput: () => document.querySelector('#updDown'),
@@ -15,8 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
         scaleLogoInput: () => document.querySelector('#scaleLogo'),
     };
 
-    const calculateOneToHundredValueOfScene = () => ([pageElements.scene().getBoundingClientRect().width / 100, pageElements.scene().getBoundingClientRect().height / 100])
-    const [sceneWidth, sceneHeight] = calculateOneToHundredValueOfScene();
+    const calculateOneToHundredStepOfScene = () => ([
+            (pageElements.scene().getBoundingClientRect().width - pageElements.sceneLogo().offsetWidth) / 100, 
+            (pageElements.scene().getBoundingClientRect().height - pageElements.sceneLogo().offsetHeight) / 100,
+        ]);
+    
+    const [sceneWidth, sceneHeight] = calculateOneToHundredStepOfScene();
 
     // const eventListenerForInputChanges = (element, func) => element.addEventListener('input', func);
 
@@ -29,12 +33,29 @@ document.addEventListener('DOMContentLoaded', () => {
     //             ));
     // });
 
+    pageElements.backgroundColorInput()
+    .addEventListener(
+        'change', 
+        () => {
+            pageElements.sceneBackground().style.backgroundColor = `${pageElements.backgroundColorInput().value}`;
+        },
+    );
+
     pageElements.upDownLogoPositionInput()
     .addEventListener(
         'input', 
         () => {
-            pageElements.sceneLogo().style.top = `${(sceneHeight * pageElements.upDownLogoPositionInput().value)}px`;
+            pageElements.sceneLogo().style.top = `${sceneHeight * pageElements.upDownLogoPositionInput().value}px`;
         },
-
     );
+
+    pageElements.leftRightLogoPositionInput()
+    .addEventListener(
+        'input', 
+        () => {
+            pageElements.sceneLogo().style.left = `${sceneWidth * pageElements.leftRightLogoPositionInput().value}px`;
+        },
+    );
+
+    
 });
