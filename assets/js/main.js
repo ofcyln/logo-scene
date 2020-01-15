@@ -89,4 +89,20 @@ document.addEventListener('DOMContentLoaded', () => {
             pageElements.sceneBrandName().style.right = `${sceneWidthForBrand * pageElements.leftRightFontPositionInput().value}px`;
         },
     );
+
+    pageElements.fontSizeInput()
+    .addEventListener(
+        'input', 
+        () => {
+            pageElements.sceneBrandName().style.fontSize = `${pageElements.fontSizeInput().value}px`;
+        },
+    );
+
+    pageElements.scaleLogoInput()
+    .addEventListener(
+        'input', 
+        () => {
+            pageElements.scene().style.transform = `scale(${pageElements.scaleLogoInput().value})`;
+        },
+    );
 });
