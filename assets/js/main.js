@@ -15,12 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
         scaleLogoInput: () => document.querySelector('#scaleLogo'),
     };
 
-    const calculateOneToHundredStepOfScene = () => ([
-            (pageElements.scene().getBoundingClientRect().width - pageElements.sceneLogo().offsetWidth) / 100, 
-            (pageElements.scene().getBoundingClientRect().height - pageElements.sceneLogo().offsetHeight) / 100,
+    const calculateOneToHundredStepOfScene = (element) => ([
+            (pageElements.scene().getBoundingClientRect().width - element.offsetWidth) / 100, 
+            (pageElements.scene().getBoundingClientRect().height - element.offsetHeight) / 100,
         ]);
     
-    const [sceneWidth, sceneHeight] = calculateOneToHundredStepOfScene();
+    const [sceneWidthForLogo, sceneHeightForLogo] = calculateOneToHundredStepOfScene(pageElements.sceneLogo());
+    const [sceneWidthForBrand, sceneHeightForBrand] = calculateOneToHundredStepOfScene(pageElements.sceneBrandName());
 
     // const eventListenerForInputChanges = (element, func) => element.addEventListener('input', func);
 
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .addEventListener(
         'input', 
         () => {
-            pageElements.sceneLogo().style.top = `${sceneHeight * pageElements.upDownLogoPositionInput().value}px`;
+            pageElements.sceneLogo().style.top = `${sceneHeightForLogo * pageElements.upDownLogoPositionInput().value}px`;
         },
     );
 
@@ -53,9 +54,39 @@ document.addEventListener('DOMContentLoaded', () => {
     .addEventListener(
         'input', 
         () => {
-            pageElements.sceneLogo().style.left = `${sceneWidth * pageElements.leftRightLogoPositionInput().value}px`;
+            pageElements.sceneLogo().style.left = `${sceneWidthForLogo * pageElements.leftRightLogoPositionInput().value}px`;
         },
     );
 
-    
+    pageElements.brandNameInput()
+    .addEventListener(
+        'input', 
+        () => {
+            pageElements.sceneBrandName().innerHTML = `${pageElements.brandNameInput().value}`;
+        },
+    );
+
+    pageElements.fontTypeInput()
+    .addEventListener(
+        'change', 
+        () => {
+            pageElements.sceneBrandName().style.fontFamily = pageElements.fontTypeInput().value;
+        },
+    );
+
+    pageElements.upDownFontPositionInput()
+    .addEventListener(
+        'input', 
+        () => {
+            pageElements.sceneBrandName().style.bottom = `${sceneHeightForBrand * pageElements.upDownFontPositionInput().value}px`;
+        },
+    );
+
+    pageElements.leftRightFontPositionInput()
+    .addEventListener(
+        'input', 
+        () => {
+            pageElements.sceneBrandName().style.right = `${sceneWidthForBrand * pageElements.leftRightFontPositionInput().value}px`;
+        },
+    );
 });
