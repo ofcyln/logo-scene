@@ -5,7 +5,7 @@
 
 ### Using the project on live environment
 
-The final app hosted on [https://logo-scene.firebaseapp.com](https://logo-scene.firebaseapp.com).
+The final app hosted on <a alt="Logo Scene screenshot" target="_blank" href="https://logo-scene.firebaseapp.com">https://logo-scene.firebaseapp.com</a>
 
 ### Using the project on local environment
 
@@ -35,6 +35,11 @@ Navigate to `http://localhost:3000/`. The app will automatically reload if you c
 *   I've created this project to see the logo of my new project on the screen with a variety of changes for example logo background color, logo brand name, brand name color, font type, font size, positions of the logo and brand name.
 
 *   You can change the logo with yours easily by replacing the logo in the 'assets/logo' folder. I suggest you to add SVG logo because everything on the screen is scalable.
+
+# Screenshots
+<a alt="Logo Scene screenshot" target="_blank" href="https://logo-scene.firebaseapp.com">
+  <img src="https://logo-scene.firebaseapp.com/assets/screenshots/logo-scene-ss.png" width="75%" />
+</a>
 
 ## Future improvements
 *    Upload your own logo easily with an upload logo button
