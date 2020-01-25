@@ -1,12 +1,6 @@
 # Logo Scene - Prototype Logo Creator
 
-### Using the project on local environment and using it on Stackblitz
-
-Simply go to this URL: [https://stackblitz.com/github/ofcyln/logo-scene](https://stackblitz.com/github/ofcyln/logo-scene)
-
-Stackblitz can only show you the visible UI of the project without cloning it to your local environment. Please not that, for security reasons `Stackblitz` doesn't show images, fonts or font icons that used on the project.
-
-----------------
+### Using the project on local environment
 
 Run these commands in the terminal to run the app on your local environment
 
