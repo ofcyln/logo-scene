@@ -1,4 +1,11 @@
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 # Logo Scene - Prototype Logo Creator
+
+### Using the project on live environment
+
+The final app hosted on [https://logo-scene.firebaseapp.com](https://logo-scene.firebaseapp.com).
 
 ### Using the project on local environment
 
