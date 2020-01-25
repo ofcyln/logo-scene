@@ -34,4 +34,5 @@ Navigate to `http://localhost:3000/`. The app will automatically reload if you c
 *    Change size of the logo on the screen
 *    Take a screenshot of the logo scene with a button
 *    Re-calculate boundaries of the screen on change of the window size
+*    Select from Google Fonts families
 
