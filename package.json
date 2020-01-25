@@ -1,0 +1,25 @@
+{
+	"name": "logo-scene",
+	"version": "1.0.0",
+	"description": "Create and see your basic logo variations on the scene as prototype without need of any image editors",
+	"scripts": {
+		"start": "lite-server"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ofcyln/logo-scene.git"
+	},
+	"keywords": [
+		"logo",
+		"scene"
+	],
+	"author": "Osman Fikret Ceylan",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ofcyln/logo-scene/issues"
+	},
+	"homepage": "https://github.com/ofcyln/logo-scene#readme",
+	"devDependencies": {
+		"lite-server": "^2.5.4"
+	}
+}
