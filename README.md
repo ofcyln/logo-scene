@@ -41,7 +41,7 @@ Navigate to `http://localhost:3000/`. The app will automatically reload if you c
   <img src="https://logo-scene.firebaseapp.com/assets/screenshots/logo-scene-ss.png" width="75%" />
 </a>
 
-## Future improvements
+## Possible future improvements
 *    Upload your own logo easily with an upload logo button
 *    Change size of the logo on the screen
 *    Take a screenshot of the logo scene with a button
