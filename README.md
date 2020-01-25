@@ -36,7 +36,7 @@ Navigate to `http://localhost:3000/`. The app will automatically reload if you c
 
 *   You can change the logo with yours easily by replacing the logo in the 'assets/logo' folder. I suggest you to add SVG logo because everything on the screen is scalable.
 
-# Screenshots
+## Screenshots
 <a alt="Logo Scene screenshot" target="_blank" href="https://logo-scene.firebaseapp.com">
   <img src="https://logo-scene.firebaseapp.com/assets/screenshots/logo-scene-ss.png" width="75%" />
 </a>
