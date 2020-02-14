@@ -1,3 +1,7 @@
+import '../css/bootstrap.css';
+import '../css/fonts.css';
+import '../css/styles.scss';
+
 class executePageFunctionality {
 	HUNDRED_PERCENT = 100;
 
