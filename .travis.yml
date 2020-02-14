@@ -1,5 +1,15 @@
 language: node_js
-node_js:
-  - "lts/*"
-  - "node"
-script: npm run build
+
+dist: trusty
+
+sudo: required
+
+branches:
+    only:
+        master
+
+before_script:
+    npm i
+
+script:
+    npm run build
