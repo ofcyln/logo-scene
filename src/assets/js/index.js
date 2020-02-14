@@ -2,169 +2,183 @@ import '../css/bootstrap.css';
 import '../css/fonts.css';
 import '../css/styles.scss';
 
+import UploadLogo from './uploadLogo.js';
+
 class executePageFunctionality {
-    constructor() {
-        this.HUNDRED_PERCENT = 100;
+	constructor() {
+		this.HUNDRED_PERCENT = 100;
 
-        this.elementSelector = selector => document.querySelector(selector);
+		this.elementSelector = selector => document.querySelector(selector);
 
-        this.pageElements = {
-            scene: this.elementSelector('.logo-scene-container'),
-            sceneBackground: this.elementSelector('.background-area'),
-            sceneLogo: this.elementSelector('.logo-area img'),
-            sceneBrandName: this.elementSelector('.brand-name-area'),
-            backgroundColorInput: this.elementSelector('#backgroundColor'),
-            upDownLogoPositionInput: this.elementSelector('#updDown'),
-            leftRightLogoPositionInput: this.elementSelector('#leftRight'),
-            brandNameInput: this.elementSelector('#brandName'),
-            fontTypeInput: this.elementSelector('#fontTypeSelect'),
-            fontColorInput: this.elementSelector('#fontColor'),
-            fontSizeInput: this.elementSelector('#fontSize'),
-            upDownFontPositionInput: this.elementSelector('#updDownFont'),
-            leftRightFontPositionInput: this.elementSelector('#leftRightFont'),
-            scaleLogoInput: this.elementSelector('#scaleLogo')
-        };
+		this.pageElements = {
+			scene: this.elementSelector('.logo-scene-container'),
+			sceneBackground: this.elementSelector('.background-area'),
+			newLogoInput: this.elementSelector('#newLogo'),
+			sceneLogo: this.elementSelector('.logo-area img'),
+			sceneBrandName: this.elementSelector('.brand-name-area'),
+			backgroundColorInput: this.elementSelector('#backgroundColor'),
+			upDownLogoPositionInput: this.elementSelector('#updDown'),
+			leftRightLogoPositionInput: this.elementSelector('#leftRight'),
+			brandNameInput: this.elementSelector('#brandName'),
+			fontTypeInput: this.elementSelector('#fontTypeSelect'),
+			fontColorInput: this.elementSelector('#fontColor'),
+			fontSizeInput: this.elementSelector('#fontSize'),
+			upDownFontPositionInput: this.elementSelector('#updDownFont'),
+			leftRightFontPositionInput: this.elementSelector('#leftRightFont'),
+			scaleLogoInput: this.elementSelector('#scaleLogo')
+		};
 
-        const sceneBackgroundColor = this.getComputedStyleOfElement(
-            this.pageElements.sceneBackground,
-            'background-color'
-        );
-        const brandFontColor = this.getComputedStyleOfElement(
-            this.pageElements.sceneBrandName,
-            'color'
-        );
+		this.uploadService = new UploadLogo();
 
-        this.pageElements.brandNameInput.value = this.pageElements.sceneBrandName.innerText;
-        this.pageElements.backgroundColorInput.value = this.convertRGBtoHEX(
-            sceneBackgroundColor
-        );
-        this.pageElements.fontColorInput.value = this.convertRGBtoHEX(
-            brandFontColor
-        );
+		const sceneBackgroundColor = this.getComputedStyleOfElement(
+			this.pageElements.sceneBackground,
+			'background-color'
+		);
+		const brandFontColor = this.getComputedStyleOfElement(
+			this.pageElements.sceneBrandName,
+			'color'
+		);
 
-        this.setEventListeners();
-    }
+		this.pageElements.brandNameInput.value = this.pageElements.sceneBrandName.innerText;
+		this.pageElements.backgroundColorInput.value = this.convertRGBtoHEX(
+			sceneBackgroundColor
+		);
+		this.pageElements.fontColorInput.value = this.convertRGBtoHEX(
+			brandFontColor
+		);
 
-    getComputedStyleOfElement(element, style) {
-        return getComputedStyle(element, null).getPropertyValue(style);
-    }
+		this.setEventListeners();
+	}
 
-    convertRGBtoHEX(rgbColor) {
-        rgbColor = rgbColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+	getComputedStyleOfElement(element, style) {
+		return getComputedStyle(element, null).getPropertyValue(style);
+	}
 
-        return `#${this.calculateHex(rgbColor[1])}${this.calculateHex(
-            rgbColor[2]
-        )}${this.calculateHex(rgbColor[3])}`;
-    }
+	convertRGBtoHEX(rgbColor) {
+		rgbColor = rgbColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
 
-    calculateHex(digit) {
-        const hexDigits = [
-            '0',
-            '1',
-            '2',
-            '3',
-            '4',
-            '5',
-            '6',
-            '7',
-            '8',
-            '9',
-            'a',
-            'b',
-            'c',
-            'd',
-            'e',
-            'f'
-        ];
+		return `#${this.calculateHex(rgbColor[1])}${this.calculateHex(
+			rgbColor[2]
+		)}${this.calculateHex(rgbColor[3])}`;
+	}
 
-        return isNaN(digit)
-            ? '00'
-            : hexDigits[(digit - (digit % 16)) / 16] + hexDigits[digit % 16];
-    }
+	calculateHex(digit) {
+		const hexDigits = [
+			'0',
+			'1',
+			'2',
+			'3',
+			'4',
+			'5',
+			'6',
+			'7',
+			'8',
+			'9',
+			'a',
+			'b',
+			'c',
+			'd',
+			'e',
+			'f'
+		];
 
-    calculateOneToHundredStepOfScene(element) {
-        return [
-            (this.pageElements.scene.getBoundingClientRect().width -
-                element.offsetWidth) /
-                this.HUNDRED_PERCENT,
-            (this.pageElements.scene.getBoundingClientRect().height -
-                element.offsetHeight) /
-                this.HUNDRED_PERCENT
-        ];
-    }
+		return isNaN(digit)
+			? '00'
+			: hexDigits[(digit - (digit % 16)) / 16] + hexDigits[digit % 16];
+	}
 
-    setEventListeners() {
-        const [
-            sceneWidthForLogo,
-            sceneHeightForLogo
-        ] = this.calculateOneToHundredStepOfScene(this.pageElements.sceneLogo);
-        const [
-            sceneWidthForBrand,
-            sceneHeightForBrand
-        ] = this.calculateOneToHundredStepOfScene(
-            this.pageElements.sceneBrandName
-        );
+	calculateOneToHundredStepOfScene(element) {
+		return [
+			(this.pageElements.scene.getBoundingClientRect().width -
+				element.offsetWidth) /
+			this.HUNDRED_PERCENT,
+			(this.pageElements.scene.getBoundingClientRect().height -
+				element.offsetHeight) /
+			this.HUNDRED_PERCENT
+		];
+	}
 
-        const eventListenerForInputChanges = (
-            element,
-            listenerType,
-            callbackFuncion
-        ) => element.addEventListener(listenerType, callbackFuncion);
+	setEventListeners() {
+		const [
+			sceneWidthForLogo,
+			sceneHeightForLogo
+		] = this.calculateOneToHundredStepOfScene(this.pageElements.sceneLogo);
+		const [
+			sceneWidthForBrand,
+			sceneHeightForBrand
+		] = this.calculateOneToHundredStepOfScene(
+			this.pageElements.sceneBrandName
+		);
 
-        const events = {
-            upDownLogoPositionInput: () =>
-                (this.pageElements.sceneLogo.style.top = `${sceneHeightForLogo *
-                    this.pageElements.upDownLogoPositionInput.value}px`),
-            leftRightLogoPositionInput: () =>
-                (this.pageElements.sceneLogo.style.left = `${sceneWidthForLogo *
-                    this.pageElements.leftRightLogoPositionInput.value}px`),
-            brandNameInput: () =>
-                (this.pageElements.sceneBrandName.innerHTML = `${this.pageElements.brandNameInput.value}`),
-            fontTypeInput: () =>
-                (this.pageElements.sceneBrandName.style.fontFamily = this.pageElements.fontTypeInput.value),
-            upDownFontPositionInput: () =>
-                (this.pageElements.sceneBrandName.style.bottom = `${sceneHeightForBrand *
-                    this.pageElements.upDownFontPositionInput.value}px`),
-            leftRightFontPositionInput: () =>
-                (this.pageElements.sceneBrandName.style.right = `${sceneWidthForBrand *
-                    this.pageElements.leftRightFontPositionInput.value}px`),
-            fontSizeInput: () =>
-                (this.pageElements.sceneBrandName.style.fontSize = `${this.pageElements.fontSizeInput.value}px`),
-            scaleLogoInput: () =>
-                (this.pageElements.scene.style.transform = `scale(${this.pageElements.scaleLogoInput.value})`)
-        };
+		const eventListenerForInputChanges = (
+			element,
+			listenerType,
+			callbackFuncion
+		) => element.addEventListener(listenerType, callbackFuncion);
 
-        Object.keys(this.pageElements)
-            .filter(element => element.includes('Input'))
-            .forEach(inputElement => {
-                if (
-                    inputElement === 'backgroundColorInput' ||
-                    inputElement === 'fontColorInput'
-                ) {
-                    inputElement === 'backgroundColorInput'
-                        ? eventListenerForInputChanges(
-                              this.pageElements[inputElement],
-                              'change',
-                              () =>
-                                  (this.pageElements.sceneBackground.style.backgroundColor = `${this.pageElements[inputElement].value}`)
-                          )
-                        : eventListenerForInputChanges(
-                              this.pageElements[inputElement],
-                              'change',
-                              () =>
-                                  (this.pageElements.sceneBrandName.style.color = `${this.pageElements[inputElement].value}`)
-                          );
-                } else {
-                    eventListenerForInputChanges(
-                        this.pageElements[inputElement],
-                        'input',
-                        events[inputElement]
-                    );
-                }
-            });
-    }
+		const events = {
+			upDownLogoPositionInput: () =>
+				(this.pageElements.sceneLogo.style.top = `${sceneHeightForLogo *
+				this.pageElements.upDownLogoPositionInput.value}px`),
+			leftRightLogoPositionInput: () =>
+				(this.pageElements.sceneLogo.style.left = `${sceneWidthForLogo *
+				this.pageElements.leftRightLogoPositionInput.value}px`),
+			brandNameInput: () =>
+				(this.pageElements.sceneBrandName.innerHTML = `${this.pageElements.brandNameInput.value}`),
+			fontTypeInput: () =>
+				(this.pageElements.sceneBrandName.style.fontFamily = this.pageElements.fontTypeInput.value),
+			upDownFontPositionInput: () =>
+				(this.pageElements.sceneBrandName.style.bottom = `${sceneHeightForBrand *
+				this.pageElements.upDownFontPositionInput.value}px`),
+			leftRightFontPositionInput: () =>
+				(this.pageElements.sceneBrandName.style.right = `${sceneWidthForBrand *
+				this.pageElements.leftRightFontPositionInput.value}px`),
+			fontSizeInput: () =>
+				(this.pageElements.sceneBrandName.style.fontSize = `${this.pageElements.fontSizeInput.value}px`),
+			scaleLogoInput: () =>
+				(this.pageElements.scene.style.transform = `scale(${this.pageElements.scaleLogoInput.value})`),
+			newLogoInput: (event) => (this.uploadService.previewFile(event.target.files[0], this.pageElements.sceneLogo))
+		};
+
+		Object.keys(this.pageElements)
+			.filter(element => element.includes('Input'))
+			.forEach(inputElement => {
+				if (
+					inputElement === 'backgroundColorInput' ||
+					inputElement === 'fontColorInput'
+				) {
+					inputElement === 'backgroundColorInput'
+						? eventListenerForInputChanges(
+						this.pageElements[inputElement],
+						'change',
+						() =>
+							(this.pageElements.sceneBackground.style.backgroundColor = `${this.pageElements[inputElement].value}`)
+						)
+						: eventListenerForInputChanges(
+						this.pageElements[inputElement],
+						'change',
+						() =>
+							(this.pageElements.sceneBrandName.style.color = `${this.pageElements[inputElement].value}`)
+						);
+
+					if (inputElement === 'newLogoInput') {
+						eventListenerForInputChanges(
+							this.pageElements[inputElement],
+							'change',
+							events[inputElement]
+						);
+					}
+				} else {
+					eventListenerForInputChanges(
+						this.pageElements[inputElement],
+						'input',
+						events[inputElement]
+					);
+				}
+			});
+	}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new executePageFunctionality();
+	new executePageFunctionality();
 });
