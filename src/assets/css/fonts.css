@@ -40,7 +40,7 @@
 	src: url('../font/Pixel.eot?#iefix') format('embedded-opentype'),
 	url('../font/Pixel.woff2') format('woff2'),
 	url('../font/Pixel.woff') format('woff'),
-	url('../font/Pixel.ttf') format('truetype'),
+	url('../font/pixel.ttf') format('truetype'),
 	url('../font/Pixel.svg#Pixel') format('svg');
 	font-weight: normal;
 	font-style: normal;
@@ -52,7 +52,7 @@
 	src: url('../font/Arcade.eot?#iefix') format('embedded-opentype'),
 	url('../font/Arcade.woff2') format('woff2'),
 	url('../font/Arcade.woff') format('woff'),
-	url('../font/Arcade.ttf') format('truetype'),
+	url('../font/arcade.ttf') format('truetype'),
 	url('../font/Arcade.svg#Arcade') format('svg');
 	font-weight: normal;
 	font-style: normal;
@@ -76,7 +76,7 @@
 	src: url('../font/Humanoid.eot?#iefix') format('embedded-opentype'),
 	url('../font/Humanoid.woff2') format('woff2'),
 	url('../font/Humanoid.woff') format('woff'),
-	url('../font/Humanoid.ttf') format('truetype'),
+	url('../font/humanoid.ttf') format('truetype'),
 	url('../font/Humanoid.svg#Humanoid') format('svg');
 	font-weight: normal;
 	font-style: normal;
