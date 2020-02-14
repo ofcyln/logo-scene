@@ -1,31 +1,52 @@
 .logo-scene-container {
-    height: 60%;
-    width: 60%;
+	height: 60%;
+	width: 60%;
 }
 
 .logo-area img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 25%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 25%;
 }
 
 .brand-name-area {
-    font-family: 'arcade', Helvetica, sans-serif;
-    color: #fff;
-    font-size: 50px;
-    bottom: 0;
-    right: 0;
+	font-family: 'arcade', Helvetica, sans-serif;
+	color: #fff;
+	font-size: 50px;
+	bottom: 0;
+	right: 0;
 }
 
 .background-area {
-    background-color: #FC0000;
+	background-color: #FC0000;
 }
 
 .p-relative {
-    position: relative;
+	position: relative;
 }
 
 .p-absolute {
-    position: absolute;
+	position: absolute;
+}
+
+.overflow-y-auto {
+	overflow-y: auto;
+}
+
+.button {
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: #7f85a7;
+	color: #fff;
+	cursor: pointer;
+	transition: background-color 0.1s ease-in-out;
+
+	&:hover {
+		background-color: #444b73;
+	}
+}
+
+#newLogo {
+	display: none;
 }
