@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Logo Scene</title>
+
+    <meta name="theme-color" content="orange">
+    <meta name="msapplication-navbutton-color" content="orange">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+</head>
+
+<body class="d-flex flex-column vh-100">
+	<section class="d-flex flex-column flex-md-row flex-fill">
+		<article class="d-flex flex-fill align-items-center justify-content-center">
+			<div class="logo-scene-container d-flex flex-column p-relative">
+				<div class="background-area d-flex flex-fill"></div>
+
+				<div class="logo-area">
+					<img src="./src/assets/logo/jurassic-world.svg">
+				</div>
+
+				<pre class="brand-name-area p-absolute">Jurassic World</pre>
+			</div>
+		</article>
+
+		<article class="d-flex flex-column border-left">
+			<div class="p-3 d-flex flex-column">
+				<div>
+					<input type="color"
+					       id="backgroundColor"
+					       name="background-color"
+					       value="#FC0000">
+
+					<label for="backgroundColor">Choose background color</label>
+				</div>
+			</div>
+
+			<div class="border-top"></div>
+
+			<div class="p-3 d-flex flex-column">
+				<p>Choose logo position</p>
+
+				<div>
+					<input type="range"
+					       id="updDown"
+					       name="up-down"
+					       min="0"
+					       max="100"
+					       value="1"
+					       step="1">
+
+					<label for="updDown">Up-Down</label>
+				</div>
+			</div>
+
+			<div class="p-3 d-flex flex-column">
+				<div>
+					<input type="range"
+					       id="leftRight"
+					       name="left-right"
+					       min="0"
+					       max="100"
+					       value="1"
+					       step="1">
+
+					<label for="leftRight">Left-Right</label>
+				</div>
+			</div>
+
+			<div class="border-top"></div>
+
+			<div class="p-3 d-flex flex-column">
+				<p>Enter brand name</p>
+
+				<div>
+					<textarea type="text"
+						id="brandName"
+						name="up-down">
+					</textarea>
+				</div>
+			</div>
+
+			<div class="border-top"></div>
+
+			<div class="p-3 d-flex flex-column">
+				<div>
+					<input type="color"
+					       id="fontColor"
+					       name="background-color"
+					       value="#ffffff">
+
+					<label for="fontColor">Choose font color</label>
+				</div>
+			</div>
+
+			<div class="p-3 d-flex flex-column">
+				<select name="font-type" id="fontTypeSelect">
+					<option value="" disabled selected>--Choose a font--</option>
+					<option value="humanoidstraight">Humanoid Straight</option>
+					<option value="bloxbrk">Blox BRK</option>
+					<option value="pixelsix01">Pixel Six</option>
+					<option value="pixel">Pixel</option>
+					<option value="arcade">Arcade</option>
+					<option value="humanoid">Humanoid</option>
+					<option value="kongtextregular">Kongtext Regular</option>
+					<option value="mobilefont">Mobile Font</option>
+					<option value="lotsofdotz">Lots of Dotz</option>
+					<option value="pixelcowboy">Pixel Cowboy</option>
+					<option value="orangekidregular">Orange Kid Regular</option>
+				</select>
+			</div>
+
+			<div class="p-3 d-flex flex-column">
+				<p>Choose font size</p>
+
+				<div>
+					<input type="range"
+					       id="fontSize"
+					       name="up-down"
+					       min="15"
+					       max="100"
+					       value="50"
+					       step="1">
+
+					<label for="fontSize">Font size</label>
+				</div>
+			</div>
+
+			<div class="p-3 d-flex flex-column">
+				<p>Choose font position</p>
+
+				<div>
+					<input type="range"
+					       id="updDownFont"
+					       name="up-down"
+					       min="0"
+					       max="100"
+					       value="0"
+					       step="1">
+
+					<label for="updDownFont">Up-Down</label>
+				</div>
+			</div>
+
+			<div class="p-3 d-flex flex-column">
+				<div>
+					<input type="range"
+					       id="leftRightFont"
+					       name="left-right"
+					       min="0"
+					       max="100"
+					       value="0"
+					       step="1">
+
+					<label for="leftRightFont">Left-Right</label>
+				</div>
+			</div>
+
+			<div class="border-top"></div>
+
+			<div class="p-3 d-flex flex-column">
+				<p>Scale logo</p>
+
+				<div>
+					<input type="range"
+					       id="scaleLogo"
+					       name="up-down"
+					       min="0"
+					       max="2"
+					       value="1"
+					       step="0.1">
+
+					<label for="scaleLogo">Up to 2x</label>
+				</div>
+			</div>
+
+		</article>
+	</section>
+</body>
+</html>
