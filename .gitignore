@@ -243,11 +243,6 @@ typings/
 # dotenv environment variables file
 .env
 
-### WebPack ###
-!public/
-public/*
-public/**
-
 ### grunt ###
 # Grunt usually compiles uploadingFiles inside this directory
 dist/
