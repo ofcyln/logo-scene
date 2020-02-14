@@ -15,4 +15,4 @@ before_script:
     npm i
 
 script:
-    npm start
+    npm run build
