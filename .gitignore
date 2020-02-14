@@ -132,6 +132,7 @@ Temporary Items
 sftp-config.json
 
 # Package control specific uploadingFiles
+package-lock.json
 Package Control.last-run
 Package Control.ca-list
 Package Control.ca-bundle
