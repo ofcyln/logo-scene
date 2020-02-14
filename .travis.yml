@@ -1,5 +1,8 @@
 language: node_js
 
+node_js:
+    "10"
+
 dist: trusty
 
 sudo: required
@@ -12,4 +15,4 @@ before_script:
     npm i
 
 script:
-    npm run build
+    npm start
