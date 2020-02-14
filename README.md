@@ -39,7 +39,7 @@ Navigate to `http://localhost:3000/`. The app will automatically reload if you c
 
 ## Screenshots
 <a alt="Logo Scene screenshot" target="_blank" href="https://logo-scene.firebaseapp.com">
-  <img src="https://logo-scene.firebaseapp.com/assets/screenshots/logo-scene-ss.png" width="75%" />
+  <img src="https://logo-scene.firebaseapp.com/src/assets/screenshots/logo-scene-ss.png" width="75%" />
 </a>
 
 ## Possible future improvements
