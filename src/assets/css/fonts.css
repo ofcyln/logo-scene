@@ -1,131 +1,131 @@
 @font-face {
 	font-family: 'Humanoidstraight';
-	src: url('./src/assets/font/Humanoidstraight.eot');
-	src: url('./src/assets/font/Humanoidstraight.eot?#iefix') format('embedded-opentype'),
-	url('./src/assets/font/Humanoidstraight.woff2') format('woff2'),
-	url('./src/assets/font/Humanoidstraight.woff') format('woff'),
-	url('./src/assets/font/Humanoidstraight.ttf') format('truetype'),
-	url('./src/assets/font/Humanoidstraight.svg#Humanoidstraight') format('svg');
+	src: url('../font/Humanoidstraight.eot');
+	src: url('../font/Humanoidstraight.eot?#iefix') format('embedded-opentype'),
+	url('../font/Humanoidstraight.woff2') format('woff2'),
+	url('../font/Humanoidstraight.woff') format('woff'),
+	url('../font/Humanoidstraight.ttf') format('truetype'),
+	url('../font/Humanoidstraight.svg#Humanoidstraight') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'BloxBRK';
-	src: url('./src/assets/font/BloxBRK.eot');
-	src: url('./src/assets/font/BloxBRK.eot?#iefix') format('embedded-opentype'),
-	url('./src/assets/font/BloxBRK.woff2') format('woff2'),
-	url('./src/assets/font/BloxBRK.woff') format('woff'),
-	url('./src/assets/font/BloxBRK.ttf') format('truetype'),
-	url('./src/assets/font/BloxBRK.svg#BloxBRK') format('svg');
+	src: url('../font/BloxBRK.eot');
+	src: url('../font/BloxBRK.eot?#iefix') format('embedded-opentype'),
+	url('../font/BloxBRK.woff2') format('woff2'),
+	url('../font/BloxBRK.woff') format('woff'),
+	url('../font/BloxBRK.ttf') format('truetype'),
+	url('../font/BloxBRK.svg#BloxBRK') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'PixelSix01';
-	src: url('./src/assets/font/PixelSix01.eot');
-	src: url('./src/assets/font/PixelSix01.eot?#iefix') format('embedded-opentype'),
-	url('./src/assets/font/PixelSix01.woff2') format('woff2'),
-	url('./src/assets/font/PixelSix01.woff') format('woff'),
-	url('./src/assets/font/PixelSix01.ttf') format('truetype'),
-	url('./src/assets/font/PixelSix01.svg#PixelSix01') format('svg');
+	src: url('../font/PixelSix01.eot');
+	src: url('../font/PixelSix01.eot?#iefix') format('embedded-opentype'),
+	url('../font/PixelSix01.woff2') format('woff2'),
+	url('../font/PixelSix01.woff') format('woff'),
+	url('../font/PixelSix01.ttf') format('truetype'),
+	url('../font/PixelSix01.svg#PixelSix01') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Pixel';
-	src: url('./src/assets/font/Pixel.eot');
-	src: url('./src/assets/font/Pixel.eot?#iefix') format('embedded-opentype'),
-	url('./src/assets/font/Pixel.woff2') format('woff2'),
-	url('./src/assets/font/Pixel.woff') format('woff'),
-	url('./src/assets/font/Pixel.ttf') format('truetype'),
-	url('./src/assets/font/Pixel.svg#Pixel') format('svg');
+	src: url('../font/Pixel.eot');
+	src: url('../font/Pixel.eot?#iefix') format('embedded-opentype'),
+	url('../font/Pixel.woff2') format('woff2'),
+	url('../font/Pixel.woff') format('woff'),
+	url('../font/Pixel.ttf') format('truetype'),
+	url('../font/Pixel.svg#Pixel') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Arcade';
-	src: url('./src/assets/font/Arcade.eot');
-	src: url('./src/assets/font/Arcade.eot?#iefix') format('embedded-opentype'),
-	url('./src/assets/font/Arcade.woff2') format('woff2'),
-	url('./src/assets/font/Arcade.woff') format('woff'),
-	url('./src/assets/font/Arcade.ttf') format('truetype'),
-	url('./src/assets/font/Arcade.svg#Arcade') format('svg');
+	src: url('../font/Arcade.eot');
+	src: url('../font/Arcade.eot?#iefix') format('embedded-opentype'),
+	url('../font/Arcade.woff2') format('woff2'),
+	url('../font/Arcade.woff') format('woff'),
+	url('../font/Arcade.ttf') format('truetype'),
+	url('../font/Arcade.svg#Arcade') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'OrangeKid-Regular';
-	src: url('./src/assets/font/OrangeKid-Regular.eot');
-	src: url('./src/assets/font/OrangeKid-Regular.eot?#iefix') format('embedded-opentype'),
-	url('./src/assets/font/OrangeKid-Regular.woff2') format('woff2'),
-	url('./src/assets/font/OrangeKid-Regular.woff') format('woff'),
-	url('./src/assets/font/OrangeKid-Regular.ttf') format('truetype'),
-	url('./src/assets/font/OrangeKid-Regular.svg#OrangeKid-Regular') format('svg');
+	src: url('../font/OrangeKid-Regular.eot');
+	src: url('../font/OrangeKid-Regular.eot?#iefix') format('embedded-opentype'),
+	url('../font/OrangeKid-Regular.woff2') format('woff2'),
+	url('../font/OrangeKid-Regular.woff') format('woff'),
+	url('../font/OrangeKid-Regular.ttf') format('truetype'),
+	url('../font/OrangeKid-Regular.svg#OrangeKid-Regular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Humanoid';
-	src: url('./src/assets/font/Humanoid.eot');
-	src: url('./src/assets/font/Humanoid.eot?#iefix') format('embedded-opentype'),
-	url('./src/assets/font/Humanoid.woff2') format('woff2'),
-	url('./src/assets/font/Humanoid.woff') format('woff'),
-	url('./src/assets/font/Humanoid.ttf') format('truetype'),
-	url('./src/assets/font/Humanoid.svg#Humanoid') format('svg');
+	src: url('../font/Humanoid.eot');
+	src: url('../font/Humanoid.eot?#iefix') format('embedded-opentype'),
+	url('../font/Humanoid.woff2') format('woff2'),
+	url('../font/Humanoid.woff') format('woff'),
+	url('../font/Humanoid.ttf') format('truetype'),
+	url('../font/Humanoid.svg#Humanoid') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'KongtextRegular';
-	src: url('./src/assets/font/KongtextRegular.eot');
-	src: url('./src/assets/font/KongtextRegular.eot?#iefix') format('embedded-opentype'),
-	url('./src/assets/font/KongtextRegular.woff2') format('woff2'),
-	url('./src/assets/font/KongtextRegular.woff') format('woff'),
-	url('./src/assets/font/KongtextRegular.ttf') format('truetype'),
-	url('./src/assets/font/KongtextRegular.svg#KongtextRegular') format('svg');
+	src: url('../font/KongtextRegular.eot');
+	src: url('../font/KongtextRegular.eot?#iefix') format('embedded-opentype'),
+	url('../font/KongtextRegular.woff2') format('woff2'),
+	url('../font/KongtextRegular.woff') format('woff'),
+	url('../font/KongtextRegular.ttf') format('truetype'),
+	url('../font/KongtextRegular.svg#KongtextRegular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'MobileFont';
-	src: url('./src/assets/font/MobileFont.eot');
-	src: url('./src/assets/font/MobileFont.eot?#iefix') format('embedded-opentype'),
-	url('./src/assets/font/MobileFont.woff2') format('woff2'),
-	url('./src/assets/font/MobileFont.woff') format('woff'),
-	url('./src/assets/font/MobileFont.ttf') format('truetype'),
-	url('./src/assets/font/MobileFont.svg#MobileFont') format('svg');
+	src: url('../font/MobileFont.eot');
+	src: url('../font/MobileFont.eot?#iefix') format('embedded-opentype'),
+	url('../font/MobileFont.woff2') format('woff2'),
+	url('../font/MobileFont.woff') format('woff'),
+	url('../font/MobileFont.ttf') format('truetype'),
+	url('../font/MobileFont.svg#MobileFont') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'LotsOfDotz';
-	src: url('./src/assets/font/LotsOfDotz.eot');
-	src: url('./src/assets/font/LotsOfDotz.eot?#iefix') format('embedded-opentype'),
-	url('./src/assets/font/LotsOfDotz.woff2') format('woff2'),
-	url('./src/assets/font/LotsOfDotz.woff') format('woff'),
-	url('./src/assets/font/LotsOfDotz.ttf') format('truetype'),
-	url('./src/assets/font/LotsOfDotz.svg#LotsOfDotz') format('svg');
+	src: url('../font/LotsOfDotz.eot');
+	src: url('../font/LotsOfDotz.eot?#iefix') format('embedded-opentype'),
+	url('../font/LotsOfDotz.woff2') format('woff2'),
+	url('../font/LotsOfDotz.woff') format('woff'),
+	url('../font/LotsOfDotz.ttf') format('truetype'),
+	url('../font/LotsOfDotz.svg#LotsOfDotz') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'PixelCowboy';
-	src: url('./src/assets/font/PixelCowboy.eot');
-	src: url('./src/assets/font/PixelCowboy.eot?#iefix') format('embedded-opentype'),
-	url('./src/assets/font/PixelCowboy.woff2') format('woff2'),
-	url('./src/assets/font/PixelCowboy.woff') format('woff'),
-	url('./src/assets/font/PixelCowboy.ttf') format('truetype'),
-	url('./src/assets/font/PixelCowboy.svg#PixelCowboy') format('svg');
+	src: url('../font/PixelCowboy.eot');
+	src: url('../font/PixelCowboy.eot?#iefix') format('embedded-opentype'),
+	url('../font/PixelCowboy.woff2') format('woff2'),
+	url('../font/PixelCowboy.woff') format('woff'),
+	url('../font/PixelCowboy.ttf') format('truetype'),
+	url('../font/PixelCowboy.svg#PixelCowboy') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
