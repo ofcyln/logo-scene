@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/efad5270fac34f25a4fc78bacb0a1e83)](https://app.codacy.com/manual/ofcyln/logo-scene?utm_source=github.com&utm_medium=referral&utm_content=ofcyln/logo-scene&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.com/ofcyln/logo-scene.svg?branch=master)](https://travis-ci.com/ofcyln/logo-scene)
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
