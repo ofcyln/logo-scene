@@ -17,6 +17,7 @@ class executePageFunctionality {
 			sceneLogo: this.elementSelector('.logo-area img'),
 			sceneBrandName: this.elementSelector('.brand-name-area'),
 			backgroundColorInput: this.elementSelector('#backgroundColor'),
+			logoSizeInput: this.elementSelector('#logoSize'),
 			upDownLogoPositionInput: this.elementSelector('#updDown'),
 			leftRightLogoPositionInput: this.elementSelector('#leftRight'),
 			brandNameInput: this.elementSelector('#brandName'),
@@ -127,6 +128,8 @@ class executePageFunctionality {
 				(this.pageElements.sceneBrandName.innerHTML = `${this.pageElements.brandNameInput.value}`),
 			fontTypeInput: () =>
 				(this.pageElements.sceneBrandName.style.fontFamily = this.pageElements.fontTypeInput.value),
+			logoSizeInput: () =>
+				(this.pageElements.sceneLogo.style.transform = `scale(${this.pageElements.logoSizeInput.value})`),
 			upDownFontPositionInput: () =>
 				(this.pageElements.sceneBrandName.style.bottom = `${sceneHeightForBrand *
 				this.pageElements.upDownFontPositionInput.value}px`),

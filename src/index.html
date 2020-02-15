@@ -55,8 +55,22 @@
 		</div>
 
 		<div class="p-3 d-flex flex-column">
-			<p>Choose logo position</p>
+			<p>Customize logo</p>
 
+			<div>
+				<input type="range"
+				       id="logoSize"
+				       name="small-big"
+				       min="0.5"
+				       max="3"
+				       value="1"
+				       step="0.1">
+
+				<label for="logoSize">Size</label>
+			</div>
+		</div>
+
+		<div class="p-3 d-flex flex-column">
 			<div>
 				<input type="range"
 				       id="updDown"
@@ -66,7 +80,7 @@
 				       value="1"
 				       step="1">
 
-				<label for="updDown">Up-Down</label>
+				<label for="updDown">Vertical</label>
 			</div>
 		</div>
 
@@ -80,7 +94,7 @@
 				       value="1"
 				       step="1">
 
-				<label for="leftRight">Left-Right</label>
+				<label for="leftRight">Horizontal</label>
 			</div>
 		</div>
 
@@ -139,7 +153,7 @@
 				       value="50"
 				       step="1">
 
-				<label for="fontSize">Font size</label>
+				<label for="fontSize">Size</label>
 			</div>
 		</div>
 
@@ -155,7 +169,7 @@
 				       value="0"
 				       step="1">
 
-				<label for="updDownFont">Up-Down</label>
+				<label for="updDownFont">Vertical</label>
 			</div>
 		</div>
 
@@ -169,7 +183,7 @@
 				       value="0"
 				       step="1">
 
-				<label for="leftRightFont">Left-Right</label>
+				<label for="leftRightFont">Horizontal</label>
 			</div>
 		</div>
 
@@ -182,12 +196,12 @@
 				<input type="range"
 				       id="scaleLogo"
 				       name="up-down"
-				       min="0"
-				       max="2"
+				       min="0.5"
+				       max="1.5"
 				       value="1"
 				       step="0.1">
 
-				<label for="scaleLogo">Up to 2x</label>
+				<label for="scaleLogo">Size</label>
 			</div>
 		</div>
 
