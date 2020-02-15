@@ -23,7 +23,7 @@ module.exports = {
 		  { from: Path.resolve(__dirname, '../src/assets/logo'), to: 'src/assets/logo' }
 	  ]),
 	  new CopyWebpackPlugin([
-		  { from: Path.resolve(__dirname, '../src/assets/logo'), to: 'src/assets/screenshots' }
+		  { from: Path.resolve(__dirname, '../src/assets/screenshots'), to: 'src/assets/screenshots' }
 	  ]),
     new CopyWebpackPlugin([
       { from: Path.resolve(__dirname, '../public'), to: 'public' }
