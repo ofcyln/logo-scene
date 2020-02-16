@@ -1,47 +1,44 @@
+$absolute: absolute;
+$relative: relative;
+$white: #fff;
+
+@mixin transition($type, $time) {
+	transition: $type $time ease-in-out;
+}
+
 .logo-scene-container {
 	height: 60%;
 	width: 60%;
-}
 
-.logo-area img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 25%;
-}
+	.logo-area img {
+		position: $absolute;
+		top: 0;
+		left: 0;
+		width: 25%;
+	}
 
-.brand-name-area {
-	font-family: 'arcade', Helvetica, sans-serif;
-	color: #fff;
-	line-height: 1;
-	font-size: 50px;
-	bottom: 0;
-	right: 0;
-}
+	.brand-name-area {
+		font-family: 'arcade', Helvetica, sans-serif;
+		color: $white;
+		line-height: 1;
+		font-size: 50px;
+		bottom: 0;
+		right: 0;
+	}
 
-.background-area {
-	background-color: #FC0000;
-}
-
-.p-relative {
-	position: relative;
-}
-
-.p-absolute {
-	position: absolute;
-}
-
-.overflow-y-auto {
-	overflow-y: auto;
+	.background-area {
+		background-color: #FC0000;
+	}
 }
 
 .button {
 	display: inline-block;
 	padding: 5px 10px;
 	background-color: #7f85a7;
-	color: #fff;
+	color: $white;
 	cursor: pointer;
-	transition: background-color 0.1s ease-in-out;
+
+	@include transition(background-color, 0.1s);
 
 	&:hover {
 		background-color: #444b73;
@@ -50,4 +47,32 @@
 
 #newLogo {
 	display: none;
+}
+
+.border-top {
+	border-top: 1px solid #dee2e6;
+}
+
+.border-left {
+	border-left: 1px solid #dee2e6;
+}
+
+.vh-100 {
+	height: 100vh;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.p-relative {
+	position: $relative;
+}
+
+.p-absolute {
+	position: $absolute;
+}
+
+.overflow-y-auto {
+	overflow-y: auto;
 }
