@@ -1,5 +1,6 @@
-import '../css/bootstrap.css';
-import '../css/fonts.css';
+import '../css/bootstrap-reboot.css';
+import '../css/bootstrap-grid.css';
+import '../css/fonts.scss';
 import '../css/styles.scss';
 
 import UploadLogo from './uploadLogo.js';
