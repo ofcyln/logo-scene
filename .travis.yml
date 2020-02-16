@@ -9,7 +9,7 @@ sudo: required
 
 branches:
     only:
-        master
+        develop
 
 before_script:
     npm i
