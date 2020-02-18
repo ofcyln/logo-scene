@@ -6,6 +6,23 @@ $white: #fff;
 	transition: $type $time ease-in-out;
 }
 
+@keyframes octoCat-wave {
+	0%,
+	100% {
+		transform: rotate(0);
+	}
+
+	20%,
+	60% {
+		transform: rotate(-25deg);
+	}
+
+	40%,
+	80% {
+		transform: rotate(10deg);
+	}
+}
+
 .logo-scene-container {
 	height: 60%;
 	width: 60%;
@@ -42,6 +59,29 @@ $white: #fff;
 
 	&:hover {
 		background-color: #444b73;
+	}
+}
+
+.github-ribbon {
+	height: 50px;
+
+	&:hover {
+		.octo-arm {
+			animation: none;
+		}
+	}
+
+	.octo-arm {
+		animation: octoCat-wave 500ms ease-in-out;
+	}
+
+	svg {
+		fill: #009688;
+		color: #fff;
+		height: 100%;
+		border: 0;
+		-webkit-transform: scaleX(-1);
+		transform: scaleX(-1);
 	}
 }
 
