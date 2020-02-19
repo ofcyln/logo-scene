@@ -132,7 +132,11 @@ class executePageFunctionality {
 			brandNameInput: () =>
 				(this.pageElements.sceneBrandName.innerHTML = `${this.pageElements.brandNameInput.value}`),
 			fontTypeInput: () =>
-				(this.pageElements.sceneBrandName.style.fontFamily = this.pageElements.fontTypeInput.value),
+				{
+					this.insertSelectedGoogleFont(this.pageElements.fontTypeInput.value);
+
+					this.pageElements.sceneBrandName.style.fontFamily = `'${this.pageElements.fontTypeInput.value}', Arial, sans-serif`;
+				},
 			logoSizeInput: () =>
 				(this.pageElements.sceneLogo.style.transform = `scale(${this.pageElements.logoSizeInput.value})`),
 			upDownFontPositionInput: () =>
@@ -184,6 +188,14 @@ class executePageFunctionality {
 					);
 				}
 			});
+	}
+
+	insertSelectedGoogleFont(font) {
+		font = font.split(' ').join('+');
+
+		const fontSelection = `https://fonts.googleapis.com/css?family=Open+Sans${font ? '|' + font : ''}&display=swap`;
+
+		document.querySelector('#googleFont').setAttribute('href', fontSelection);
 	}
 
 	loadGoogleFonts() {
