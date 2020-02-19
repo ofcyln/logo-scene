@@ -4,6 +4,7 @@ import '../css/fonts.scss';
 import '../css/styles.scss';
 
 import UploadLogo from './uploadLogo.js';
+import Fonts from './googleFonts.json';
 
 class executePageFunctionality {
 	constructor() {
@@ -31,6 +32,7 @@ class executePageFunctionality {
 		};
 
 		this.uploadService = new UploadLogo();
+		this.googleFonts = Fonts;
 
 		const sceneBackgroundColor = this.getComputedStyleOfElement(
 			this.pageElements.sceneBackground,
@@ -50,6 +52,8 @@ class executePageFunctionality {
 		);
 
 		this.setEventListeners();
+
+		this.loadGoogleFonts();
 	}
 
 	getComputedStyleOfElement(element, style) {
@@ -180,6 +184,21 @@ class executePageFunctionality {
 					);
 				}
 			});
+	}
+
+	loadGoogleFonts() {
+		this.createOrganizedGoogleFonts().forEach(font => {
+			this.pageElements.fontTypeInput.insertAdjacentHTML('beforeend', `<option value="${font.name}">${font.name}</option>`);
+		});
+	}
+
+	createOrganizedGoogleFonts() {
+		return [...this.googleFonts].map((font, index) => {
+			return {
+				index,
+				name: font,
+			};
+		});
 	}
 }
 
