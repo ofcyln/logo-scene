@@ -190,6 +190,13 @@ class executePageFunctionality {
 			});
 	}
 
+	/**  
+	 * TODO:
+	 * Loading mechanism,
+	 * Separated Class for Google Fonts,
+	 * Switch button for google fonts selection to prevent preloading of fonts array
+	 * */
+
 	insertSelectedGoogleFont(font) {
 		font = font.split(' ').join('+');
 
