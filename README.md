@@ -44,8 +44,9 @@ Navigate to `http://localhost:3000/`. The app will automatically reload if you c
   <img src="https://logo-scene.firebaseapp.com/src/assets/screenshots/logo-scene-ss.png" width="75%" />
 </a>
 
-## Possible future improvements
+## Upcoming improvements
 * Take a screenshot of the logo scene and save it on your local machine
-* Re-calculate boundaries of the screen on change of the window size
+* Saving the logo scene with transparent background
 * Select from Google Fonts families
-
+* Re-calculate boundaries of the screen on change of the window size
+* More options to edit brand name's styles and logo scene itself
