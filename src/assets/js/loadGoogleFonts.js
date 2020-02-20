@@ -14,6 +14,8 @@ export default class GoogleFonts {
 	}
 
 	appendGoogleFonts(parentElement) {
+		parentElement.innerHTML = '';
+
 		this.createOrganizedGoogleFonts().forEach(font => {
 			parentElement.insertAdjacentHTML('beforeend', `<option value="${font.name}">${font.name}</option>`);
 		});

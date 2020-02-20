@@ -5,11 +5,12 @@ import '../css/styles.scss';
 
 import UploadLogo from './uploadLogo.js';
 import GoogleFonts from './loadGoogleFonts.js';
+import ArcadeFonts from './loadArcadeFonts.js';
 
 class executePageFunctionality {
 	constructor() {
 		this.uploadService = new UploadLogo();
-		this.googleFontsService = new GoogleFonts();
+		this.arcadeFontsService = new ArcadeFonts();
 
 		this.prepareProperties();
 
@@ -32,11 +33,13 @@ class executePageFunctionality {
 
 		this.setEventListeners(this.pageElements);
 
-		this.googleFontsService.appendGoogleFonts(this.pageElements.fontTypeInput);
+		this.loadFonts();
 	}
 
 	prepareProperties() {
 		this.HUNDRED_PERCENT = 100;
+
+		this.isGoogleFonts = false;
 
 		this.elementSelector = selector => document.querySelector(selector);
 
@@ -51,6 +54,8 @@ class executePageFunctionality {
 			upDownLogoPositionInput: this.elementSelector('#updDown'),
 			leftRightLogoPositionInput: this.elementSelector('#leftRight'),
 			brandNameInput: this.elementSelector('#brandName'),
+			arcadeFontsInput: this.elementSelector('#arcadeFonts'),
+			googleFontsInput: this.elementSelector('#googleFonts'),
 			fontTypeInput: this.elementSelector('#fontTypeSelect'),
 			fontColorInput: this.elementSelector('#fontColor'),
 			fontSizeInput: this.elementSelector('#fontSize'),
@@ -58,6 +63,19 @@ class executePageFunctionality {
 			leftRightFontPositionInput: this.elementSelector('#leftRightFont'),
 			scaleLogoInput: this.elementSelector('#scaleLogo')
 		};
+	}
+
+	loadFonts() {
+		if (this.isGoogleFonts) {
+			if (!this.googleFontsService) {
+				this.googleFontsService = new GoogleFonts();
+			}
+
+			this.googleFontsService.appendGoogleFonts(this.pageElements.fontTypeInput);
+
+		} else {
+			this.arcadeFontsService.appendArcadeFonts(this.pageElements.fontTypeInput);
+		}
 	}
 
 	getComputedStyleOfElement(element, style) {
@@ -135,6 +153,16 @@ class executePageFunctionality {
 
 					this.pageElements.sceneBrandName.style.fontFamily = `'${this.pageElements.fontTypeInput.value}', Arial, sans-serif`;
 				},
+			arcadeFontsInput: () => {
+				this.isGoogleFonts = false;
+
+				this.loadFonts();
+				},
+			googleFontsInput: () => {
+				this.isGoogleFonts = true;
+
+				this.loadFonts();
+			},
 			logoSizeInput: () =>
 				(this.pageElements.sceneLogo.style.transform = `scale(${this.pageElements.logoSizeInput.value})`),
 			upDownFontPositionInput: () =>
@@ -164,8 +192,8 @@ class executePageFunctionality {
 			.filter(element => element.includes('Input'))
 			.forEach(inputElement => {
 				if (
-					inputElement === 'backgroundColorInput' ||
-					inputElement === 'fontColorInput'
+					inputElement === 'backgroundColorInput'
+					|| inputElement === 'fontColorInput'
 				) {
 					inputElement === 'backgroundColorInput'
 						? eventListenerForInputChanges(
@@ -181,7 +209,9 @@ class executePageFunctionality {
 							(this.pageElements.sceneBrandName.style.color = `${this.pageElements[inputElement].value}`)
 						);
 
-					if (inputElement === 'newLogoInput') {
+					if (inputElement === 'newLogoInput'
+						|| inputElement === 'arcadeFontsInput'
+						|| inputElement === 'googleFontsInput') {
 						eventListenerForInputChanges(
 							this.pageElements[inputElement],
 							'change',
