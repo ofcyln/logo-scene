@@ -4,33 +4,15 @@ import '../css/fonts.scss';
 import '../css/styles.scss';
 
 import UploadLogo from './uploadLogo.js';
+import GoogleFonts from './loadGoogleFonts.js';
+import ArcadeFonts from './loadArcadeFonts.js';
 
 class executePageFunctionality {
 	constructor() {
-		this.HUNDRED_PERCENT = 100;
-
-		this.elementSelector = selector => document.querySelector(selector);
-
-		this.pageElements = {
-			scene: this.elementSelector('.logo-scene-container'),
-			sceneBackground: this.elementSelector('.background-area'),
-			newLogoInput: this.elementSelector('#newLogo'),
-			sceneLogo: this.elementSelector('.logo-area img'),
-			sceneBrandName: this.elementSelector('.brand-name-area'),
-			backgroundColorInput: this.elementSelector('#backgroundColor'),
-			logoSizeInput: this.elementSelector('#logoSize'),
-			upDownLogoPositionInput: this.elementSelector('#updDown'),
-			leftRightLogoPositionInput: this.elementSelector('#leftRight'),
-			brandNameInput: this.elementSelector('#brandName'),
-			fontTypeInput: this.elementSelector('#fontTypeSelect'),
-			fontColorInput: this.elementSelector('#fontColor'),
-			fontSizeInput: this.elementSelector('#fontSize'),
-			upDownFontPositionInput: this.elementSelector('#updDownFont'),
-			leftRightFontPositionInput: this.elementSelector('#leftRightFont'),
-			scaleLogoInput: this.elementSelector('#scaleLogo')
-		};
-
 		this.uploadService = new UploadLogo();
+		this.arcadeFontsService = new ArcadeFonts();
+
+		this.prepareProperties();
 
 		const sceneBackgroundColor = this.getComputedStyleOfElement(
 			this.pageElements.sceneBackground,
@@ -49,7 +31,51 @@ class executePageFunctionality {
 			brandFontColor
 		);
 
-		this.setEventListeners();
+		this.setEventListeners(this.pageElements);
+
+		this.loadFonts();
+	}
+
+	prepareProperties() {
+		this.HUNDRED_PERCENT = 100;
+
+		this.isGoogleFonts = false;
+
+		this.elementSelector = selector => document.querySelector(selector);
+
+		this.pageElements = {
+			scene: this.elementSelector('.logo-scene-container'),
+			sceneBackground: this.elementSelector('.background-area'),
+			newLogoInput: this.elementSelector('#newLogo'),
+			sceneLogo: this.elementSelector('.logo-area img'),
+			sceneBrandName: this.elementSelector('.brand-name-area'),
+			backgroundColorInput: this.elementSelector('#backgroundColor'),
+			logoSizeInput: this.elementSelector('#logoSize'),
+			upDownLogoPositionInput: this.elementSelector('#updDown'),
+			leftRightLogoPositionInput: this.elementSelector('#leftRight'),
+			brandNameInput: this.elementSelector('#brandName'),
+			arcadeFontsInput: this.elementSelector('#arcadeFonts'),
+			googleFontsInput: this.elementSelector('#googleFonts'),
+			fontTypeInput: this.elementSelector('#fontTypeSelect'),
+			fontColorInput: this.elementSelector('#fontColor'),
+			fontSizeInput: this.elementSelector('#fontSize'),
+			upDownFontPositionInput: this.elementSelector('#updDownFont'),
+			leftRightFontPositionInput: this.elementSelector('#leftRightFont'),
+			scaleLogoInput: this.elementSelector('#scaleLogo')
+		};
+	}
+
+	loadFonts() {
+		if (this.isGoogleFonts) {
+			if (!this.googleFontsService) {
+				this.googleFontsService = new GoogleFonts();
+			}
+
+			this.googleFontsService.appendGoogleFonts(this.pageElements.fontTypeInput);
+
+		} else {
+			this.arcadeFontsService.appendArcadeFonts(this.pageElements.fontTypeInput);
+		}
 	}
 
 	getComputedStyleOfElement(element, style) {
@@ -100,7 +126,7 @@ class executePageFunctionality {
 		];
 	}
 
-	setEventListeners() {
+	prepareEvents() {
 		const [
 			sceneWidthForLogo,
 			sceneHeightForLogo
@@ -112,13 +138,7 @@ class executePageFunctionality {
 			this.pageElements.sceneBrandName
 		);
 
-		const eventListenerForInputChanges = (
-			element,
-			listenerType,
-			callbackFuncion
-		) => element.addEventListener(listenerType, callbackFuncion);
-
-		const events = {
+		return {
 			upDownLogoPositionInput: () =>
 				(this.pageElements.sceneLogo.style.top = `${sceneHeightForLogo *
 				this.pageElements.upDownLogoPositionInput.value}px`),
@@ -128,7 +148,21 @@ class executePageFunctionality {
 			brandNameInput: () =>
 				(this.pageElements.sceneBrandName.innerHTML = `${this.pageElements.brandNameInput.value}`),
 			fontTypeInput: () =>
-				(this.pageElements.sceneBrandName.style.fontFamily = this.pageElements.fontTypeInput.value),
+				{
+					this.googleFontsService.insertSelectedGoogleFont(this.pageElements.fontTypeInput.value);
+
+					this.pageElements.sceneBrandName.style.fontFamily = `'${this.pageElements.fontTypeInput.value}', Arial, sans-serif`;
+				},
+			arcadeFontsInput: () => {
+				this.isGoogleFonts = false;
+
+				this.loadFonts();
+				},
+			googleFontsInput: () => {
+				this.isGoogleFonts = true;
+
+				this.loadFonts();
+			},
 			logoSizeInput: () =>
 				(this.pageElements.sceneLogo.style.transform = `scale(${this.pageElements.logoSizeInput.value})`),
 			upDownFontPositionInput: () =>
@@ -143,13 +177,23 @@ class executePageFunctionality {
 				(this.pageElements.scene.style.transform = `scale(${this.pageElements.scaleLogoInput.value})`),
 			newLogoInput: (event) => (this.uploadService.previewFile(event.target.files[0], this.pageElements.sceneLogo))
 		};
+	}
 
-		Object.keys(this.pageElements)
+	setEventListeners(elements) {
+		const events = this.prepareEvents();
+
+		const eventListenerForInputChanges = (
+			element,
+			listenerType,
+			callbackFuncion
+		) => element.addEventListener(listenerType, callbackFuncion);
+
+		Object.keys(elements)
 			.filter(element => element.includes('Input'))
 			.forEach(inputElement => {
 				if (
-					inputElement === 'backgroundColorInput' ||
-					inputElement === 'fontColorInput'
+					inputElement === 'backgroundColorInput'
+					|| inputElement === 'fontColorInput'
 				) {
 					inputElement === 'backgroundColorInput'
 						? eventListenerForInputChanges(
@@ -165,7 +209,9 @@ class executePageFunctionality {
 							(this.pageElements.sceneBrandName.style.color = `${this.pageElements[inputElement].value}`)
 						);
 
-					if (inputElement === 'newLogoInput') {
+					if (inputElement === 'newLogoInput'
+						|| inputElement === 'arcadeFontsInput'
+						|| inputElement === 'googleFontsInput') {
 						eventListenerForInputChanges(
 							this.pageElements[inputElement],
 							'change',
