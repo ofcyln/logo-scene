@@ -4,7 +4,7 @@ import '../css/fonts.scss';
 import '../css/styles.scss';
 
 import UploadLogo from './uploadLogo.js';
-import Fonts from './googleFonts.json';
+import GoogleFonts from './loadGoogleFonts.js';
 
 class executePageFunctionality {
 	constructor() {
@@ -32,7 +32,8 @@ class executePageFunctionality {
 		};
 
 		this.uploadService = new UploadLogo();
-		this.googleFonts = Fonts;
+
+		this.googleFontsService = new GoogleFonts();
 
 		const sceneBackgroundColor = this.getComputedStyleOfElement(
 			this.pageElements.sceneBackground,
@@ -53,7 +54,7 @@ class executePageFunctionality {
 
 		this.setEventListeners();
 
-		this.loadGoogleFonts();
+		this.googleFontsService.appendGoogleFonts(this.pageElements.fontTypeInput);
 	}
 
 	getComputedStyleOfElement(element, style) {
@@ -133,7 +134,7 @@ class executePageFunctionality {
 				(this.pageElements.sceneBrandName.innerHTML = `${this.pageElements.brandNameInput.value}`),
 			fontTypeInput: () =>
 				{
-					this.insertSelectedGoogleFont(this.pageElements.fontTypeInput.value);
+					this.googleFontsService.insertSelectedGoogleFont(this.pageElements.fontTypeInput.value);
 
 					this.pageElements.sceneBrandName.style.fontFamily = `'${this.pageElements.fontTypeInput.value}', Arial, sans-serif`;
 				},
@@ -190,35 +191,12 @@ class executePageFunctionality {
 			});
 	}
 
-	/**  
+	/**
 	 * TODO:
 	 * Loading mechanism,
 	 * Separated Class for Google Fonts,
 	 * Switch button for google fonts selection to prevent preloading of fonts array
 	 * */
-
-	insertSelectedGoogleFont(font) {
-		font = font.split(' ').join('+');
-
-		const fontSelection = `https://fonts.googleapis.com/css?family=Open+Sans${font ? '|' + font : ''}&display=swap`;
-
-		document.querySelector('#googleFont').setAttribute('href', fontSelection);
-	}
-
-	loadGoogleFonts() {
-		this.createOrganizedGoogleFonts().forEach(font => {
-			this.pageElements.fontTypeInput.insertAdjacentHTML('beforeend', `<option value="${font.name}">${font.name}</option>`);
-		});
-	}
-
-	createOrganizedGoogleFonts() {
-		return [...this.googleFonts].map((font, index) => {
-			return {
-				index,
-				name: font,
-			};
-		});
-	}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
