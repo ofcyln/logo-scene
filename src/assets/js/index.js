@@ -11,7 +11,7 @@ class executePageFunctionality {
 		this.uploadService = new UploadLogo();
 		this.googleFontsService = new GoogleFonts();
 
-		this.addProperties();
+		this.prepareProperties();
 
 		const sceneBackgroundColor = this.getComputedStyleOfElement(
 			this.pageElements.sceneBackground,
@@ -30,12 +30,12 @@ class executePageFunctionality {
 			brandFontColor
 		);
 
-		this.setEventListeners();
+		this.setEventListeners(this.pageElements);
 
 		this.googleFontsService.appendGoogleFonts(this.pageElements.fontTypeInput);
 	}
 
-	addProperties() {
+	prepareProperties() {
 		this.HUNDRED_PERCENT = 100;
 
 		this.elementSelector = selector => document.querySelector(selector);
@@ -108,7 +108,7 @@ class executePageFunctionality {
 		];
 	}
 
-	setEventListeners() {
+	prepareEvents() {
 		const [
 			sceneWidthForLogo,
 			sceneHeightForLogo
@@ -120,13 +120,7 @@ class executePageFunctionality {
 			this.pageElements.sceneBrandName
 		);
 
-		const eventListenerForInputChanges = (
-			element,
-			listenerType,
-			callbackFuncion
-		) => element.addEventListener(listenerType, callbackFuncion);
-
-		const events = {
+		return {
 			upDownLogoPositionInput: () =>
 				(this.pageElements.sceneLogo.style.top = `${sceneHeightForLogo *
 				this.pageElements.upDownLogoPositionInput.value}px`),
@@ -155,8 +149,18 @@ class executePageFunctionality {
 				(this.pageElements.scene.style.transform = `scale(${this.pageElements.scaleLogoInput.value})`),
 			newLogoInput: (event) => (this.uploadService.previewFile(event.target.files[0], this.pageElements.sceneLogo))
 		};
+	}
 
-		Object.keys(this.pageElements)
+	setEventListeners(elements) {
+		const events = this.prepareEvents();
+
+		const eventListenerForInputChanges = (
+			element,
+			listenerType,
+			callbackFuncion
+		) => element.addEventListener(listenerType, callbackFuncion);
+
+		Object.keys(elements)
 			.filter(element => element.includes('Input'))
 			.forEach(inputElement => {
 				if (
