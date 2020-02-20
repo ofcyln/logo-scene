@@ -13,8 +13,8 @@ export default class GoogleFonts {
 		document.querySelector('#googleFont').setAttribute('href', fontSelection);
 	}
 
-	appendGoogleFonts(parentElement) {
-		this.createOrganizedGoogleFonts().forEach(font => {
+	async appendGoogleFonts(parentElement) {
+		await this.createOrganizedGoogleFonts().forEach(font => {
 			parentElement.insertAdjacentHTML('beforeend', `<option value="${font.name}">${font.name}</option>`);
 		});
 	}

@@ -8,6 +8,34 @@ import GoogleFonts from './loadGoogleFonts.js';
 
 class executePageFunctionality {
 	constructor() {
+		this.uploadService = new UploadLogo();
+		this.googleFontsService = new GoogleFonts();
+
+		this.addProperties();
+
+		const sceneBackgroundColor = this.getComputedStyleOfElement(
+			this.pageElements.sceneBackground,
+			'background-color'
+		);
+		const brandFontColor = this.getComputedStyleOfElement(
+			this.pageElements.sceneBrandName,
+			'color'
+		);
+
+		this.pageElements.brandNameInput.value = this.pageElements.sceneBrandName.innerText;
+		this.pageElements.backgroundColorInput.value = this.convertRGBtoHEX(
+			sceneBackgroundColor
+		);
+		this.pageElements.fontColorInput.value = this.convertRGBtoHEX(
+			brandFontColor
+		);
+
+		this.setEventListeners();
+
+		this.googleFontsService.appendGoogleFonts(this.pageElements.fontTypeInput);
+	}
+
+	addProperties() {
 		this.HUNDRED_PERCENT = 100;
 
 		this.elementSelector = selector => document.querySelector(selector);
@@ -30,31 +58,6 @@ class executePageFunctionality {
 			leftRightFontPositionInput: this.elementSelector('#leftRightFont'),
 			scaleLogoInput: this.elementSelector('#scaleLogo')
 		};
-
-		this.uploadService = new UploadLogo();
-
-		this.googleFontsService = new GoogleFonts();
-
-		const sceneBackgroundColor = this.getComputedStyleOfElement(
-			this.pageElements.sceneBackground,
-			'background-color'
-		);
-		const brandFontColor = this.getComputedStyleOfElement(
-			this.pageElements.sceneBrandName,
-			'color'
-		);
-
-		this.pageElements.brandNameInput.value = this.pageElements.sceneBrandName.innerText;
-		this.pageElements.backgroundColorInput.value = this.convertRGBtoHEX(
-			sceneBackgroundColor
-		);
-		this.pageElements.fontColorInput.value = this.convertRGBtoHEX(
-			brandFontColor
-		);
-
-		this.setEventListeners();
-
-		this.googleFontsService.appendGoogleFonts(this.pageElements.fontTypeInput);
 	}
 
 	getComputedStyleOfElement(element, style) {
@@ -190,13 +193,6 @@ class executePageFunctionality {
 				}
 			});
 	}
-
-	/**
-	 * TODO:
-	 * Loading mechanism,
-	 * Separated Class for Google Fonts,
-	 * Switch button for google fonts selection to prevent preloading of fonts array
-	 * */
 }
 
 document.addEventListener('DOMContentLoaded', () => {
