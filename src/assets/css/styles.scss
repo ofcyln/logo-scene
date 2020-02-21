@@ -37,7 +37,7 @@ $white: #fff;
 	.brand-name-area {
 		font-family: 'arcade', Helvetica, sans-serif;
 		color: $white;
-		line-height: 1;
+		line-height: initial;
 		font-size: 50px;
 		bottom: 0;
 		right: 0;

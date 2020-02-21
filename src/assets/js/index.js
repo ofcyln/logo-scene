@@ -149,7 +149,9 @@ class executePageFunctionality {
 				(this.pageElements.sceneBrandName.innerHTML = `${this.pageElements.brandNameInput.value}`),
 			fontTypeInput: () =>
 				{
-					this.googleFontsService.insertSelectedGoogleFont(this.pageElements.fontTypeInput.value);
+					if (this.isGoogleFonts) {
+						this.googleFontsService.insertSelectedGoogleFont(this.pageElements.fontTypeInput.value);
+					}
 
 					this.pageElements.sceneBrandName.style.fontFamily = `'${this.pageElements.fontTypeInput.value}', Arial, sans-serif`;
 				},
