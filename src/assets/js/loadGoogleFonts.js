@@ -8,9 +8,18 @@ export default class GoogleFonts {
 	insertSelectedGoogleFont(font) {
 		font = font.split(' ').join('+');
 
-		const fontSelection = `https://fonts.googleapis.com/css?family=Open+Sans${font ? '|' + font : ''}&display=swap`;
+		const fontSelection = `https://fonts.googleapis.com/css?family=${font}&display=swap`;
 
-		document.querySelector('#googleFont').setAttribute('href', fontSelection);
+		this.createHeadLinkTag(fontSelection);
+	}
+
+	createHeadLinkTag(fontSelection) {
+		const link = document.createElement( "link" );
+		link.href = fontSelection;
+		link.type = "text/css";
+		link.rel = "stylesheet";
+
+		return document.getElementsByTagName('head')[0].appendChild(link);
 	}
 
 	appendGoogleFonts(parentElement) {
