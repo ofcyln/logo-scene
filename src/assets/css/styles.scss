@@ -44,7 +44,7 @@ $white: #fff;
 		line-height: initial;
 		font-size: 50px;
 		bottom: 0;
-		right: 0;
+		left: 0;
 	}
 
 	.background-area {
@@ -72,7 +72,7 @@ $white: #fff;
 
 .github-ribbon {
 	@include absolute;
-	
+
 	height: 50px;
     left: 0;
     top: 0;

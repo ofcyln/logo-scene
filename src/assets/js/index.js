@@ -171,7 +171,7 @@ class executePageFunctionality {
 				(this.pageElements.sceneBrandName.style.bottom = `${sceneHeightForBrand *
 				this.pageElements.upDownFontPositionInput.value}px`),
 			leftRightFontPositionInput: () =>
-				(this.pageElements.sceneBrandName.style.right = `${sceneWidthForBrand *
+				(this.pageElements.sceneBrandName.style.left = `${sceneWidthForBrand *
 				this.pageElements.leftRightFontPositionInput.value}px`),
 			fontSizeInput: () =>
 				(this.pageElements.sceneBrandName.style.fontSize = `${this.pageElements.fontSizeInput.value}px`),
