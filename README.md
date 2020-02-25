@@ -68,3 +68,7 @@ Navigate to `http://localhost:3000/`. The app will automatically reload if you c
 * Saving the logo scene with transparent background
 * Re-calculate boundaries of the screen on change of the window size
 * More options to edit brand name's styles and logo scene itself
+
+---
+
+Crafted with ♥️ by [@ofcyln](https://twitter.com/ofcyln)
