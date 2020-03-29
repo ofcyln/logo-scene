@@ -6,6 +6,7 @@ import '../css/styles.scss';
 import UploadLogo from './uploadLogo.js';
 import GoogleFonts from './loadGoogleFonts.js';
 import ArcadeFonts from './loadArcadeFonts.js';
+import html2canvas from 'html2canvas';
 
 class executePageFunctionality {
 	constructor() {
@@ -61,7 +62,8 @@ class executePageFunctionality {
 			fontSizeInput: this.elementSelector('#fontSize'),
 			upDownFontPositionInput: this.elementSelector('#updDownFont'),
 			leftRightFontPositionInput: this.elementSelector('#leftRightFont'),
-			scaleLogoInput: this.elementSelector('#scaleLogo')
+			scaleLogoInput: this.elementSelector('#scaleLogo'),
+			getSnapshotInput: this.elementSelector('#snapshotButton')
 		};
 	}
 
@@ -177,7 +179,10 @@ class executePageFunctionality {
 				(this.pageElements.sceneBrandName.style.fontSize = `${this.pageElements.fontSizeInput.value}px`),
 			scaleLogoInput: () =>
 				(this.pageElements.scene.style.transform = `scale(${this.pageElements.scaleLogoInput.value})`),
-			newLogoInput: (event) => (this.uploadService.previewFile(event.target.files[0], this.pageElements.sceneLogo))
+			newLogoInput: (event) => (this.uploadService.previewFile(event.target.files[0], this.pageElements.sceneLogo)),
+			getSnapshotInput: () => {
+				this.saveAsImage(this.pageElements.scene);
+			},
 		};
 	}
 
@@ -187,8 +192,8 @@ class executePageFunctionality {
 		const eventListenerForInputChanges = (
 			element,
 			listenerType,
-			callbackFuncion
-		) => element.addEventListener(listenerType, callbackFuncion);
+			callbackFunction
+		) => element.addEventListener(listenerType, callbackFunction);
 
 		Object.keys(elements)
 			.filter(element => element.includes('Input'))
@@ -221,6 +226,15 @@ class executePageFunctionality {
 						);
 					}
 				} else {
+
+					if (inputElement === 'getSnapshotInput') {
+						eventListenerForInputChanges(
+							this.pageElements[inputElement],
+							'click',
+							events[inputElement]
+						);
+					}
+
 					eventListenerForInputChanges(
 						this.pageElements[inputElement],
 						'input',
@@ -229,6 +243,17 @@ class executePageFunctionality {
 				}
 			});
 	}
+
+	saveAsImage(element) {
+		html2canvas(element)
+			.then((canvas) => {
+				const logo = document.createElement('a');
+
+				logo.href = canvas.toDataURL("image/jpeg").replace("image/png", "image/octet-stream");
+				logo.download = 'Logo Scene.png';
+				logo.click();
+			});
+	};
 }
 
 document.addEventListener('DOMContentLoaded', () => {
