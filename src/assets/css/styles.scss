@@ -29,6 +29,7 @@ $white: #fff;
 .logo-scene-container {
 	height: 60%;
 	width: 60%;
+	overflow: hidden;
 
 	.logo-area img {
 		@include absolute;
