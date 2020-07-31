@@ -1,0 +1,205 @@
+@-webkit-keyframes changeColor {
+  from {
+    background-color: rgba(255, 193, 7, 0.1);
+  }
+  10% {
+    background-color: rgba(96, 255, 7, 0.1);
+  }
+  20% {
+    background-color: rgba(7, 255, 147, 0.1);
+  }
+  30% {
+    background-color: rgba(7, 226, 255, 0.1);
+  }
+  40% {
+    background-color: rgba(7, 77, 255, 0.1);
+  }
+  50% {
+    background-color: rgba(109, 7, 255, 0.1);
+  }
+  60% {
+    background-color: rgba(255, 7, 229, 0.1);
+  }
+  70% {
+    background-color: rgba(255, 7, 7, 0.1);
+  }
+  80% {
+    background-color: rgba(255, 94, 7, 0.1);
+  }
+  90% {
+    background-color: rgba(152, 142, 47, 0.1);
+  }
+  100% {
+    background-color: rgba(45, 41, 127, 0.1);
+  }
+  to {
+    background-color: rgba(255, 193, 7, 0.1);
+  }
+}
+@-moz-keyframes changeColor {
+  from {
+    background-color: rgba(255, 193, 7, 0.1);
+  }
+  10% {
+    background-color: rgba(96, 255, 7, 0.1);
+  }
+  20% {
+    background-color: rgba(7, 255, 147, 0.1);
+  }
+  30% {
+    background-color: rgba(7, 226, 255, 0.1);
+  }
+  40% {
+    background-color: rgba(7, 77, 255, 0.1);
+  }
+  50% {
+    background-color: rgba(109, 7, 255, 0.1);
+  }
+  60% {
+    background-color: rgba(255, 7, 229, 0.1);
+  }
+  70% {
+    background-color: rgba(255, 7, 7, 0.1);
+  }
+  80% {
+    background-color: rgba(255, 94, 7, 0.1);
+  }
+  90% {
+    background-color: rgba(152, 142, 47, 0.1);
+  }
+  100% {
+    background-color: rgba(45, 41, 127, 0.1);
+  }
+  to {
+    background-color: rgba(255, 193, 7, 0.1);
+  }
+}
+@-ms-keyframes changeColor {
+  from {
+    background-color: rgba(255, 193, 7, 0.1);
+  }
+  10% {
+    background-color: rgba(96, 255, 7, 0.1);
+  }
+  20% {
+    background-color: rgba(7, 255, 147, 0.1);
+  }
+  30% {
+    background-color: rgba(7, 226, 255, 0.1);
+  }
+  40% {
+    background-color: rgba(7, 77, 255, 0.1);
+  }
+  50% {
+    background-color: rgba(109, 7, 255, 0.1);
+  }
+  60% {
+    background-color: rgba(255, 7, 229, 0.1);
+  }
+  70% {
+    background-color: rgba(255, 7, 7, 0.1);
+  }
+  80% {
+    background-color: rgba(255, 94, 7, 0.1);
+  }
+  90% {
+    background-color: rgba(152, 142, 47, 0.1);
+  }
+  100% {
+    background-color: rgba(45, 41, 127, 0.1);
+  }
+  to {
+    background-color: rgba(255, 193, 7, 0.1);
+  }
+}
+@-o-keyframes changeColor {
+  from {
+    background-color: rgba(255, 193, 7, 0.1);
+  }
+  10% {
+    background-color: rgba(96, 255, 7, 0.1);
+  }
+  20% {
+    background-color: rgba(7, 255, 147, 0.1);
+  }
+  30% {
+    background-color: rgba(7, 226, 255, 0.1);
+  }
+  40% {
+    background-color: rgba(7, 77, 255, 0.1);
+  }
+  50% {
+    background-color: rgba(109, 7, 255, 0.1);
+  }
+  60% {
+    background-color: rgba(255, 7, 229, 0.1);
+  }
+  70% {
+    background-color: rgba(255, 7, 7, 0.1);
+  }
+  80% {
+    background-color: rgba(255, 94, 7, 0.1);
+  }
+  90% {
+    background-color: rgba(152, 142, 47, 0.1);
+  }
+  100% {
+    background-color: rgba(45, 41, 127, 0.1);
+  }
+  to {
+    background-color: rgba(255, 193, 7, 0.1);
+  }
+}
+@keyframes changeColor {
+  from {
+    background-color: rgba(255, 193, 7, 0.1);
+  }
+  10% {
+    background-color: rgba(96, 255, 7, 0.1);
+  }
+  20% {
+    background-color: rgba(7, 255, 147, 0.1);
+  }
+  30% {
+    background-color: rgba(7, 226, 255, 0.1);
+  }
+  40% {
+    background-color: rgba(7, 77, 255, 0.1);
+  }
+  50% {
+    background-color: rgba(109, 7, 255, 0.1);
+  }
+  60% {
+    background-color: rgba(255, 7, 229, 0.1);
+  }
+  70% {
+    background-color: rgba(255, 7, 7, 0.1);
+  }
+  80% {
+    background-color: rgba(255, 94, 7, 0.1);
+  }
+  90% {
+    background-color: rgba(152, 142, 47, 0.1);
+  }
+  100% {
+    background-color: rgba(45, 41, 127, 0.1);
+  }
+  to {
+    background-color: rgba(255, 193, 7, 0.1);
+  }
+}
+
+.scene-container {
+  -webkit-animation: changeColor 30s ease infinite;
+  -khtml-animation: changeColor 30s ease infinite;
+  -moz-animation: changeColor 30s ease infinite;
+  -ms-animation: changeColor 30s ease infinite;
+  -o-animation: changeColor 30s ease infinite;
+  animation: changeColor 30s ease infinite;
+  -webkit-transition: 0.3s;
+  -khtml-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
