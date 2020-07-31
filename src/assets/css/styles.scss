@@ -26,10 +26,15 @@ $white: #fff;
 	}
 }
 
+.w-100 {
+	width: 100%;
+}
+
 .logo-scene-container {
 	height: 60%;
 	width: 60%;
 	overflow: hidden;
+	box-shadow: 0 0 15px -1px rgba(0,0,0,0.5);
 
 	.logo-area img {
 		@include absolute;
@@ -55,7 +60,6 @@ $white: #fff;
 
 .button {
 	display: inline-block;
-	padding: 5px 10px;
 	background-color: #7f85a7;
 	color: $white;
 	cursor: pointer;
@@ -69,6 +73,7 @@ $white: #fff;
 
 .properties-container {
 	width: 300px;
+	box-shadow: -10px 1px 10px -5px rgba(0,0,0,0.2);
 }
 
 .github-ribbon {
@@ -128,4 +133,109 @@ $white: #fff;
 
 .overflow-y-auto {
 	overflow-y: auto;
+}
+
+.font-size {
+	&-xs {
+		font-size: 10px;
+	}
+
+	&-sm {
+		font-size: 12px;
+	}
+
+	&-md {
+		font-size: 13px;
+	}
+
+	&-semi-lg {
+		font-size: 14px;
+	}
+
+	&-lg {
+		font-size: 15px;
+	}
+
+	&-xl {
+		font-size: 17px;
+	}
+
+	&-xxl {
+		font-size: 19px;
+	}
+}
+
+.font-weight {
+	&-normal {
+		font-weight: 400;
+	}
+
+	&-semi-bold {
+		font-weight: 600;
+	}
+
+	&-bold {
+		font-weight: 700;
+	}
+}
+
+.resize-none {
+	resize: none;
+}
+
+input[type=color] {
+	height: 35px;
+	cursor: pointer;
+}
+
+.mdl-textfield__label:after {
+	bottom: 13px !important;
+}
+
+// custom select
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	outline: 0;
+	box-shadow: none;
+	border: 0 !important;
+	background: #7f85a7;
+	background-image: none;
+	flex: 1;
+	padding: 0 .5em;
+	color: #fff;
+	cursor: pointer;
+
+	&::-ms-expand {
+		display: none;
+	}
+}
+
+.custom-select-container {
+	position: relative;
+	display: flex;
+	height: 35px;
+	line-height: 35px;
+	background: #7f85a7;
+	overflow: hidden;
+	border-radius: .25em;
+
+	&::after {
+		content: '\25BC';
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0 15px;
+		background: #676e95;
+		color: #c7c7c7;
+		cursor: pointer;
+		pointer-events: none;
+		-webkit-transition: .25s all ease;
+		-o-transition: .25s all ease;
+		transition: .25s all ease;
+	}
+
+	&:hover::after {
+		color: #fff;
+	}
 }

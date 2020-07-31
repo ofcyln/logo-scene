@@ -1,12 +1,15 @@
 import '../css/bootstrap-reboot.css';
 import '../css/bootstrap-grid.css';
 import '../css/fonts.scss';
+import 'material-design-lite/material.min.css';
+import '../css/color-change.scss';
 import '../css/styles.scss';
 
 import UploadLogo from './uploadLogo.js';
 import GoogleFonts from './loadGoogleFonts.js';
 import ArcadeFonts from './loadArcadeFonts.js';
 import html2canvas from 'html2canvas';
+import 'material-design-lite/material.min.js';
 
 class executePageFunctionality {
 	constructor() {
@@ -253,7 +256,7 @@ class executePageFunctionality {
 				logo.download = 'Logo Scene.png';
 				logo.click();
 			});
-	};
+	}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
