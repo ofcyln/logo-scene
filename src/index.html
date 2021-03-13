@@ -32,7 +32,7 @@
 		</svg>
 	</a>
 
-	<article class="d-flex flex-fill align-items-center justify-content-center">
+	<article class="d-flex flex-fill align-items-center justify-content-center scene-container">
 		<div class="logo-scene-container d-flex flex-column p-relative">
 			<div class="background-area d-flex flex-fill"></div>
 
@@ -46,37 +46,40 @@
 		</div>
 	</article>
 
-	<article class="d-flex flex-column border-left overflow-y-auto properties-container">
+	<article class="d-flex flex-column border-left overflow-y-auto properties-container pb-3">
 		<div class="p-3 d-flex flex-column">
-			<div>
-				<input type="color"
-				       id="backgroundColor"
-				       name="background-color"
-				       value="#8972b4">
+			<label for="backgroundColor" class="font-weight-semi-bold">Choose background color</label>
 
-				<label for="backgroundColor">Choose background color</label>
+			<div class="ml-3 mr-3 mt-2">
+				<input type="color"
+					   id="backgroundColor"
+					   name="background-color"
+					   class="w-100"
+					   value="#8972b4">
 			</div>
 		</div>
 
 		<div class="border-top"></div>
 
 		<div class="p-3 d-flex flex-column">
-			<p>Upload a new logo</p>
+			<p class="font-weight-semi-bold">Upload a new logo</p>
 
-			<div>
+			<div class="ml-3">
 				<input type="file"
 				       id="newLogo"
 				       accept="image/*">
 
-				<label class="button" for="newLogo">Select logo</label>
+				<label class="button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+					   for="newLogo">Select logo</label>
 			</div>
 		</div>
 
 		<div class="p-3 d-flex flex-column">
-			<p>Customize logo</p>
+			<p class="font-weight-semi-bold">Customize logo</p>
 
-			<div>
+			<div class="d-flex flex-row">
 				<input type="range"
+					   class="mdl-slider mdl-js-slider"
 				       id="logoSize"
 				       name="small-big"
 				       min="0.5"
@@ -84,13 +87,14 @@
 				       value="1"
 				       step="0.1">
 
-				<label for="logoSize">Size</label>
+				<label for="logoSize">✥</label>
 			</div>
 		</div>
 
 		<div class="p-3 d-flex flex-column">
-			<div>
+			<div class="d-flex flex-row">
 				<input type="range"
+					   class="mdl-slider mdl-js-slider"
 				       id="updDown"
 				       name="up-down"
 				       min="0"
@@ -98,98 +102,121 @@
 				       value="1"
 				       step="1">
 
-				<label for="updDown">Vertical</label>
+				<label for="updDown">⇵</label>
 			</div>
 		</div>
 
 		<div class="p-3 d-flex flex-column">
-			<div>
+			<div class="d-flex flex-row">
 				<input type="range"
+					   class="mdl-slider mdl-js-slider"
 				       id="leftRight"
-				       name="left-right"
+				       name="left-right-logo"
 				       min="0"
 				       max="100"
 				       value="1"
 				       step="1">
 
-				<label for="leftRight">Horizontal</label>
+				<label for="leftRight">⇋</label>
 			</div>
 		</div>
 
 		<div class="border-top"></div>
 
 		<div class="p-3 d-flex flex-column">
-			<p>Enter brand name</p>
+			<p class="font-weight-semi-bold">Enter brand name</p>
 
-			<div>
-				<textarea type="text"
-				          id="brandName"
-				          name="up-down">
-				</textarea>
+			<div class="ml-3">
+				<div class="mdl-textfield mdl-js-textfield pt-0">
+					<textarea type="text"
+							  id="brandName"
+							  rows= "2"
+							  class="mdl-textfield__input font-size-semi-lg resize-none"
+							  name="up-down"></textarea>
+
+					<label class="mdl-textfield__label" for="brandName"></label>
+				</div>
 			</div>
 		</div>
 
 		<div class="border-top"></div>
 
 		<div class="p-3 d-flex flex-column">
-			<div>
-				<input type="color"
-				       id="fontColor"
-				       name="background-color"
-				       value="#ffffff">
+			<p class="font-weight-semi-bold">Font settings</p>
 
+			<div class="d-flex flex-column  ml-3">
 				<label for="fontColor">Choose font color</label>
+
+				<div class="ml-3 mr-3 mt-2">
+					<input type="color"
+						   id="fontColor"
+						   name="background-color"
+						   class="w-100"
+						   value="#ffffff">
+				</div>
 			</div>
 		</div>
 
 		<div class="p-3 d-flex flex-column">
-			<div class="d-flex flex-row justify-content-between">
+			<div class="d-flex flex-row justify-content-between ml-3">
 				<div>
-					<input type="radio"
-					       id="arcadeFonts"
-					       value="arcade"
-					       name="fonts"
-					       checked>
+					<label for="arcadeFonts"
+						   class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+						<input type="radio"
+							   id="arcadeFonts"
+							   value="arcade"
+							   name="fonts"
+							   class="mdl-radio__button"
+							   checked>
 
-					<label for="arcadeFonts">Arcade Fonts</label>
+						<span class="mdl-radio__label font-size-semi-lg">Arcade Fonts</span>
+					</label>
 				</div>
 
 				<div>
-					<input type="radio"
-					       value="google"
-					       id="googleFonts"
-					       name="fonts">
+					<label for="googleFonts"
+						   class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+						<input type="radio"
+							   value="google"
+							   id="googleFonts"
+							   class="mdl-radio__button"
+							   name="fonts">
 
-					<label for="googleFonts">Google Fonts</label>
+						<span class="mdl-radio__label font-size-semi-lg">Google Fonts</span>
+					</label>
 				</div>
 			</div>
 
-			<select name="font-type" id="fontTypeSelect">
-				<option value="" disabled selected>--Choose a font--</option>
-			</select>
+			<div class="ml-3 mt-2 custom-select-container">
+				<select name="font-type" id="fontTypeSelect" class="w-100">
+					<option value="" disabled selected>--Choose a font--</option>
+				</select>
+			</div>
 		</div>
 
 		<div class="p-3 d-flex flex-column">
-			<p>Choose font size</p>
+			<p class="ml-3">Choose font size</p>
 
-			<div>
+			<div class="d-flex flex-row ml-3">
 				<input type="range"
-				       id="fontSize"
+					   class="mdl-slider mdl-js-slider"
+					   id="fontSize"
 				       name="up-down"
 				       min="15"
 				       max="100"
 				       value="50"
 				       step="1">
 
-				<label for="fontSize">Size</label>
+				<label for="fontSize">✥</label>
 			</div>
 		</div>
 
 		<div class="p-3 d-flex flex-column">
-			<p>Choose font position</p>
+			<p class="ml-3">Choose font position</p>
 
-			<div>
+			<div class="d-flex flex-row ml-3">
 				<input type="range"
+					   class="mdl-slider mdl-js-slider"
 				       id="updDownFont"
 				       name="up-down"
 				       min="0"
@@ -197,13 +224,14 @@
 				       value="0"
 				       step="1">
 
-				<label for="updDownFont">Vertical</label>
+				<label for="updDownFont">⇵</label>
 			</div>
 		</div>
 
 		<div class="p-3 d-flex flex-column">
-			<div>
+			<div class="d-flex flex-row ml-3">
 				<input type="range"
+					   class="mdl-slider mdl-js-slider"
 				       id="leftRightFont"
 				       name="left-right"
 				       min="0"
@@ -211,17 +239,18 @@
 				       value="0"
 				       step="1">
 
-				<label for="leftRightFont">Horizontal</label>
+				<label for="leftRightFont">⇋</label>
 			</div>
 		</div>
 
 		<div class="border-top"></div>
 
 		<div class="p-3 d-flex flex-column">
-			<p>Scale logo</p>
+			<p class="font-weight-semi-bold">Scale logo</p>
 
-			<div>
+			<div class="d-flex flex-row">
 				<input type="range"
+					   class="mdl-slider mdl-js-slider"
 				       id="scaleLogo"
 				       name="up-down"
 				       min="0.5"
@@ -229,20 +258,20 @@
 				       value="1"
 				       step="0.1">
 
-				<label for="scaleLogo">Size</label>
+				<label for="scaleLogo">✥</label>
 			</div>
 		</div>
 
 		<div class="border-top"></div>
 
 		<div class="p-3 d-flex flex-column">
-			<p>Get snapshot of the Logo Scene</p>
+			<p class="font-weight-semi-bold">Get snapshot of the Logo Scene</p>
 
-			<div>
+			<div class="ml-3">
 				<input type="button"
 				       id="snapshotButton"
 				       value="Get Snapshot"
-				       class="button">
+				       class="button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
 			</div>
 		</div>
 
